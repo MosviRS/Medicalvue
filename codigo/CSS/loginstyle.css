@@ -1,0 +1,84 @@
+*
+{
+	box-sizing: border-box;
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	background: url(../IMG/fondologin.jpg) no-repeat center top;
+	background-size: 100vw 100vh;
+	background-attachment: fixed;
+	margin: 0;
+	font-family: sans-serif;
+}
+form
+{
+	width: 400px;
+	margin: auto;
+	background: #FFF;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	border-radius: 10px;
+	border: #17acc2 solid 3px;
+}
+h1
+{
+	color: #FFF;
+	text-align: center;
+	margin: 0;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+h2
+{
+	color: #22E3FF;
+	text-align: center;
+	margin: 0;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+input
+{
+	width: 90%;
+	margin: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 17px;
+	border: none;
+	border-bottom: 1px solid #22e3ff;
+}
+label
+{
+	width: 100%;
+	margin: 10px;
+	color: #22E3FF;
+	font-size: 17px;
+	border: none;
+}
+#boton1
+{
+	background: #22E3FF;
+	color: #FFF;
+	padding: 10px;
+	border-radius: 5px;
+}
+#boton1:hover
+{
+	cursor: pointer;
+	background-color: #1a8292;
+}
+div#general
+{
+	margin: auto;
+	margin-top: 40px;
+	width: 400px;
+	height: 335px;
+}
+@media (max-width: 480px)  {
+	div#general{
+		width: 100%;
+	}
+}
