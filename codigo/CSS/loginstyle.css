@@ -49,6 +49,7 @@ input
 	font-size: 17px;
 	border: none;
 	border-bottom: 1px solid #22e3ff;
+	text-indent:25px;
 }
 label
 {
@@ -81,4 +82,27 @@ div#general
 	div#general{
 		width: 100%;
 	}
+}
+
+#iconologin{
+	position:relative;
+	top: 10px;
+	right:310px;
+}
+#iconologinpass{
+	position:relative;
+	top: 10px;
+	right:310px;
+}
+.far{
+	position:absolute;
+	padding: 11px;
+	right: 1px;
+	color: #A7B7AD;
+}
+.fas{
+	position:absolute;
+	padding: 11px;
+	right: 1px;
+	color: #A7B7AD;
 }
