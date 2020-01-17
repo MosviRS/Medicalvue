@@ -15,6 +15,7 @@ body
 form
 {
 	width: 400px;
+	height: 390px;
 	margin: auto;
 	background: #FFF;
 	padding: 10px 20px;
@@ -31,6 +32,9 @@ h1
 	font-size: 30px;
 	margin-bottom: 20px;
 }
+#titulo{
+	margin-top:30px;
+}
 h2
 {
 	color: #22E3FF;
@@ -41,7 +45,21 @@ h2
 }
 input
 {
-	width: 90%;
+	width: 100%;
+	margin: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 17px;
+	border: none;
+	border-bottom: 1px solid #22e3ff;
+	text-indent:25px;
+
+
+}
+button
+{
+	width: 100%;
 	margin: 10px;
 	margin-bottom: 20px;
 	padding: 10px;
@@ -59,40 +77,66 @@ label
 	font-size: 17px;
 	border: none;
 }
+
 #boton1
 {
 	background: #22E3FF;
 	color: #FFF;
-	padding: 10px;
+	padding:10px;
 	border-radius: 5px;
+	position: relative;
+	top: 10px;
+
 }
 #boton1:hover
 {
 	cursor: pointer;
 	background-color: #1a8292;
 }
+#boton2{
+
+	background:#3b5998;
+	border-bottom: 1px solid #30487a;
+	color: #FFF;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+	position: relative;
+	top: 10px;
+	margin-top: 8px;
+	
+}
+#boton2:hover
+{
+	cursor: pointer;
+	background-color: #213153;
+}
 div#general
 {
 	margin: auto;
 	margin-top: 40px;
 	width: 400px;
-	height: 335px;
+	height: 390px;
 }
 @media (max-width: 480px)  {
 	div#general{
 		width: 100%;
 	}
 }
-
-#iconologin{
+.log div{
 	position:relative;
-	top: 10px;
+	top: 5px;
 	right:310px;
 }
-#iconologinpass{
-	position:relative;
-	top: 10px;
-	right:310px;
+
+#heart{
+	position:absolute;
+	padding: 0px;
+	border: 0px;
+	right: 1px;
+	color:#22E3FF;
+	position: relative;
+	
 }
 .far{
 	position:absolute;
@@ -105,4 +149,9 @@ div#general
 	padding: 11px;
 	right: 1px;
 	color: #A7B7AD;
+}
+.fab{
+	position: relative;
+	right:80px;
+	
 }
