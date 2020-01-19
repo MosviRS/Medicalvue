@@ -12,7 +12,10 @@ header{
 .navegacion ul{
 	list-style: none;
 }
-
+.menu{
+	display: flex;
+	justify-content:end ;
+}
 .menu > li{
 	position: relative;
 	display: inline-block;
@@ -24,12 +27,22 @@ header{
 	color: #fff;
 	font-family: 'Open sans';
 	text-decoration: none;
+	font-size: 14px;
+	font-weight: 500;
+}
+.menu  a  span{
+	margin-left: 15px;
+	color: #fff;
 }
 
+
 .menu li a:hover{
-	color:  #130A40;
+    background: rgba(0,0,0,0.3);
 	transition: all .3s;
+	text-decoration: none;
 }
+
+
 
 /* Submenu*/
 

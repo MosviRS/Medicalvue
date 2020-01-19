@@ -11,6 +11,8 @@ body
 	background-attachment: fixed;
 	margin: 0;
 	font-family: sans-serif;
+	
+
 }
 form
 {
@@ -34,6 +36,7 @@ h1
 }
 #titulo{
 	margin-top:30px;
+
 }
 h2
 {
