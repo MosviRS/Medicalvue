@@ -14,6 +14,7 @@ header{
 }
 .menu{
 	display: flex;
+	justify-content: flex-end;
 	
 }
 .menu > li{
@@ -53,6 +54,10 @@ header{
 	visibility: hidden;
 	opacity: 0;
 	transition: opacity 1.5s;
+	z-index: 30;
+	position: fixed;
+	
+	
 }
 
 .submenu li a{
@@ -62,6 +67,8 @@ header{
 	font-family: 'Open sans';
 	font-size:15px;
 	text-decoration: none;
+	text-align:left;
+
 }
 
 .menu li:hover .submenu{
