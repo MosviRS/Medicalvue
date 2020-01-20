@@ -14,7 +14,7 @@ header{
 }
 .menu{
 	display: flex;
-	justify-content:end ;
+	
 }
 .menu > li{
 	position: relative;
@@ -31,7 +31,7 @@ header{
 	font-weight: 500;
 }
 .menu  a  span{
-	margin-left: 15px;
+	margin-left: 10px;
 	color: #fff;
 }
 
