@@ -35,21 +35,28 @@
      </div>
      
    	<div class="menu-bar text-right">
-   		<nav class= "container" role="menu">
-   	     <ul class="menu">
+       <input type="checkbox" id="btn-menu">
+       <label for="btn-menu" class="icon-menu"></label>
+   		<nav class= "menu" role="menu">
+   	     <ul>
           
             <li><a href="PaginaPrincipal.jsp">Inicio<span class="fas fa-angle-down"></span></a></li>
             <li><a href="#">Servicos<span class="fas fa-angle-down"></span></a></li>
             <li><a href="Medicos.jsp">Funcionalidades<span class="fas fa-angle-down"></span></a></li>
             <li><a href="#">Caracteristicas<span class="fas fa-angle-down"></span></a></li>
             <li><a href="citas.php">Paquetes<span class="fas fa-angle-down"></span></a></li>
-            <li><a href="#">Contacto<span class="fas fa-angle-down"></span></a></li>
-            <li> <a style="color: #E5EDE7;"  href="#"><i class="far fa-user" style="color: #E5EDE7;"></i> Ingresar</a>
-              <ul class="submenu">
+            <li class="submenu"><a href="#">Contacto<span class="fas fa-angle-down"></span></a>
+              <ul>
+                <li><a href="loginmedicos.html">Inicar sesion</a></li>
+                <li><a href="#">Suscribirse</a></li>
+              </ul>
+            </li>
+            <li class="submenu"> <a style="color: #E5EDE7;"  href="#"><i class="far fa-user" style="color: #E5EDE7;"></i> Ingresar</a>
+              <ul>
                   <li><a href="loginmedicos.html">Inicar sesion</a></li>
                   <li><a href="#">Suscribirse</a></li>
                 </ul>
-              </li>
+              </li >
             
           </ul>
    		</nav>

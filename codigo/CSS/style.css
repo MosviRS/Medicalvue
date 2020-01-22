@@ -25,14 +25,8 @@ header{
 .socialheader a .fa-inverse{
 	color: #2a1000;
 }
-.menu-bar{
-	background-color: #3C95A2;;
-    height: 50px;
-	margin-top: 20px;
-	display: flex;
-	justify-content: flex-end;
-	
-}
+
+
 
 
 .menu-list{
@@ -86,17 +80,15 @@ header{
 	border: none;
 }
 
-.logo, .icon-menu{
-	margin: 5px;
-}
+
 
 .icon-menu{
 	
 	width: 35px;
 	height: 40px;
 	font-size: 30px;
-	background:  #212F3C;
-	color: #20B2AA;
+	background: #0F76A5;
+	color: #fff;
 	text-align: center;
 	margin-left: auto;
 	cursor: pointer;
