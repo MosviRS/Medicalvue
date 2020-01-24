@@ -1,4 +1,4 @@
-// JavaScript Document
+// JavaScript Carrousel
 
 jQuery(document).ready(function strict (){
 	'use strict';
@@ -6,6 +6,13 @@ jQuery(document).ready(function strict (){
 		
 		interval: 2000,
 		pause: "hover"
+		
+
 	});
 		
 });
+// JavaScript navigator responsive
+$(".submenu").click(function(){
+	$(this).children("ul").slideToggle();
+})
+

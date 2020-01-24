@@ -1,4 +1,3 @@
-
 header{
 	width: 100%;
 }
@@ -12,40 +11,37 @@ header{
 .navegacion ul{
 	list-style: none;
 }
-.menu ul{
-	background-color: #3C95A2;
+.container{
 	display: flex;
-	list-style: none;
-	z-index: 30;
-	
+	justify-content: flex-end;
 	
 }
-.menu a{
+.container > li{
+	position: relative;
+	display: inline-block;
+	
+}
 
-	display: block;
+.container > li > a{
+	
 	padding: 15px 20px;
 	color: #fff;
 	font-family: 'Open sans';
 	text-decoration: none;
 	font-size: 14px;
 	font-weight: 500;
-	
-
 }
-
-
-.menu  a  span{
+.container  a  span{
 	margin-left: 10px;
 	color: #fff;
 }
 
 
-.menu  a:hover{
+.container li a:hover{
     background: rgba(0,0,0,0.3);
 	transition: all .3s;
 	text-decoration: none;
 }
-
 
 /* "header"= menu-bar */
 
@@ -55,8 +51,6 @@ header{
 	margin-top: 20px;
 	display: flex;
 	justify-content: flex-end;
-	text-align: center;
-	
 	
 }
 .menu-bar label{
@@ -68,57 +62,50 @@ header{
 	display: none;
 }
 
-
-
-/* Submenu*/
-
-
-.menu ul ul{
-	display: none;
-}
-
-.menu ul li:hover ul{
-	display: block;
-	opacity: 1;
-	position:absolute;
-	
-}
-@media (max-width: 768px)  {
+@media (max-width: 780px)  {
     .menu-bar label{
 		display: block;
 		
 	}
-	.menu{
+	.container{
 		position: absolute;
-		top: 170px;
+		top: 150px;
 		left: 0px;
-		width: 100%;
-		text-align:left;
-		transform: translateX(-100%);
-		transition:  all 0.3s;
-		z-index: 30;
 	}
 	 
-    .menu ul{
+    .container .submenu{
 		flex-direction: column;
-		
-	}
-	.menu ul ul{
-		background:  rgba(0,0,0,0.3);
-	}
-	.menu ul li:hover ul{
-		display: none;
-		opacity: 1;
-		position:static;
-		
-	}
-	.menu a span{
-		position:absolute;
-		right:10px;
-	}
-	#btn-menu:checked ~ .menu{
-		transform: translateX(0%);
-		opacity: 1;
 	}
 	
+}
+
+/* Submenu*/
+
+.submenu{
+	position: absolute;
+	background: #333333;
+	width: 180%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+	z-index: 30;
+	position: fixed;
+	
+	
+}
+
+.submenu li a{
+	display: block;
+	padding: 10px;
+	color: #fff;
+	font-family: 'Open sans';
+	font-size:15px;
+	text-decoration: none;
+	text-align:left;
+
+}
+
+.container li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
 }
