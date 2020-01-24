@@ -1,6 +1,7 @@
 
 header{
 	width: 100%;
+	
 }
 
 .navegacion{
@@ -12,6 +13,28 @@ header{
 .navegacion ul{
 	list-style: none;
 }
+
+/* "header"= menu-bar */
+
+.menu-bar{
+	background-color: #3C95A2;
+    height: 50px;
+	margin-top: 20px;
+	display: flex;
+	justify-content: flex-end;
+	text-align: center;
+	
+	
+}
+.menu-bar label{
+	font-size: 50px;
+	cursor: pointer;
+	display: none;
+}
+#btn-menu{
+	display: none;
+}
+
 .menu ul{
 	background-color: #3C95A2;
 	display: flex;
@@ -45,45 +68,33 @@ header{
 	transition: all .3s;
 	text-decoration: none;
 }
-
-
-/* "header"= menu-bar */
-
-.menu-bar{
-	background-color: #3C95A2;
-    height: 50px;
-	margin-top: 20px;
-	display: flex;
-	justify-content: flex-end;
-	text-align: center;
-	
-	
-}
-.menu-bar label{
-	font-size: 50px;
-	cursor: pointer;
-	display: none;
-}
 #btn-menu{
-	display: none;
+	color: #fff;
 }
-
-
 
 /* Submenu*/
 
 
 .menu ul ul{
 	display: none;
+    position:absolute;
+	
+	
 }
 
 .menu ul li:hover ul{
 	display: block;
 	opacity: 1;
 	position:absolute;
-	
+
 }
+
 @media (max-width: 768px)  {
+	.menu-bar{
+		display: flex;
+		justify-content: center;
+		
+	}
     .menu-bar label{
 		display: block;
 		
@@ -103,9 +114,6 @@ header{
 		flex-direction: column;
 		
 	}
-	.menu ul ul{
-		background:  rgba(0,0,0,0.3);
-	}
 	.menu ul li:hover ul{
 		display: none;
 		opacity: 1;
@@ -119,6 +127,13 @@ header{
 	#btn-menu:checked ~ .menu{
 		transform: translateX(0%);
 		opacity: 1;
+	}
+	.menu ul ul{
+		background:  rgba(0,0,0,0.4);
+		position: static;
+	}
+	.menu ul ul a{
+		padding: 15px 40px;
 	}
 	
 }
