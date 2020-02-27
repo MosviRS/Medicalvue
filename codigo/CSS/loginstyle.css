@@ -16,6 +16,7 @@ body
 }
 form
 {
+	
 	width: 400px;
 	height: 390px;
 	margin: auto;
@@ -117,7 +118,7 @@ label
 div#general
 {
 	margin: auto;
-	margin-top: 40px;
+	margin-top:20px;
 	width: 400px;
 	height: 390px;
 }
