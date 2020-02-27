@@ -66,12 +66,20 @@ body
 	
 
 }
+div #general
+{
+	margin: auto;
+	margin-top: 0px;
+	width: 400px;
+	height: 100hv;
+}
+
 form
 {
 	
-	width: 680px;
-	height: 600px;
-	margin-left: 50%;
+	width: 70%;
+	height: 100vh;
+	margin-left: 30%;
 	background: #FFF;
 	padding: 10px 20px;
 	box-sizing: border-box;
@@ -100,11 +108,4 @@ input
 	text-indent:25px;
 
 
-}
-div #general
-{
-	margin: auto;
-	margin-top: 0px;
-	width: 400px;
-	height: 390px;
 }
