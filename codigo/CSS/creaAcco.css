@@ -95,17 +95,42 @@ h2
 	font-size: 30px;
 	margin-bottom: 20px;
 }
-input
+.f1{
+	position: relative;
+	margin-bottom: 8px;
+	float: left;
+	width: 228px;
+	height: 96px;
+}
+
+.f1 input
 {
-	width: 100%;
-	margin: 10px;
-	margin-bottom: 20px;
-	padding: 10px;
+	width: 90%;
+	margin: 0px;
+	margin-bottom: 0px;
+	padding: 8px;
 	box-sizing: border-box;
-	font-size: 17px;
-	border: none;
+	border:1px solid #22e3ff;
 	border-bottom: 1px solid #22e3ff;
-	text-indent:25px;
+	text-indent:15px;
+	border-radius: 10px;
+	font-size: 15px;
+
+	
 
 
+}
+
+
+
+.f2 label{
+	color: #222222;
+    font-size: 12px;
+    transition: 0.3s all;
+    font-family: 'Open Sans', sans-serif;
+	line-height: 20px;
+	margin-bottom: 0px;
+	
+}
+	
 }

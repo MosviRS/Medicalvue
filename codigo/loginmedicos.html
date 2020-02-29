@@ -17,24 +17,24 @@
 		<!--Contenedor-->
 		<div id="general">
 			<div class=log>
-				<form action="">
+				<form  method="post" action="create-account.php" method="POST">
 					<h2>Login</h2>
 					<label for="Correo">Correo Electronico</label>
 					<div>
 						<i class="far fa-user"></i>
 					</div>
-					<input type="email" name="CorreoElec" placeholder="Inserte Correo">
+					<input type="email" name="email" aria-describedby="emailHelp" placeholder="Inserte Correo" required>
 					<label for="Cotransena">Contraseña</label>
 
 					<div>
 						<i class="fas fa-key"></i>
 					</div>
-					<input type="password" name="Contrasena" placeholder="Inserte Contraseña">
+					<input type="password" name="password" placeholder="Inserte Contraseña" required>
 					
 					<div>
 						<i class="fas fa-key"></i>
 					</div>
-					<button colspan="1" type="button"  id="boton1">Iniciar Sesión</button>
+					<button colspan="1" type="submit"  id="boton1">Iniciar Sesión</button>
                       
 					<button colspan="1" type="button"  id="boton2">	<i class="fab fa-facebook-f"></i>Iniciar Sesión con Facebook</button>
                     <button onclick="location.href='CreateAccount.html'" type="button" class="btn btn-link">Aun no te has registrado?</button>

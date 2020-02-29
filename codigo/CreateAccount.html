@@ -27,26 +27,62 @@
 		<!--Contenedor-->
 		<div id="general">
 			<div class=log >
-				<form action=""  >
+				<form action=""  method="post" action="create-account.php" method="POST" >
 					<h2>Crear cuenta</h2>
-					<label for="Correo">Nombre completo</label>
-					<div>
-						<i class="far fa-user"></i>
-					</div>
-					<input type="email" name="CorreoElec" placeholder="Inserte Correo">
-					<label for="Cotransena">Contraseña</label>
-
-					<div>
-						<i class="fas fa-key"></i>
-					</div>
-					<input type="password" name="Contrasena" placeholder="Inserte Contraseña">
-					
-					<div>
-						<i class="fas fa-key"></i>
-					</div>
-					<button colspan="1" type="button"  id="boton1">Iniciar Sesión</button>
+				  <div class="froms">
+					   <div class="f1">
+							<div class ="f2">
+								<label for="name">Nombre</label>
+							</div>
+							<input type="text" name="name" required autofocus>
+					    </div>
+						<div class="f1">
+							<div  class ="f2">
+								<label for="surname">Apellidos</label>
+							</div>
+							
+							<input type="text" name="surname" required autofocus>
+						</div>
+					    <div class="f1">
+							<div class="f2" >
+								<label for="born">Fecha de nacimiento</label>
+							</div>
+							
+							<input type="date" name="born" required>
+						</div>
+						<div class="f1">
+							<div class="f2" >
+								<label for="especiality">Especialidad</label>
+							</div>
+						
+							<input type="text" name="especiality" required>
+						</div>
+						<div class="f1">
+							<div class="f2">
+								<label for="Phone">Telefono</label>
+							</div>
+							
+							<input type="text" name="Phone" required>
+						</div>
+						<div class="f1">
+							<div class="f2">
+								<label for="email">Correo electronico</label>
+							</div>
+							
+							<input type="email" name="email" aria-describedby="emailHelp" required>
+						</div>
+						<div class="f1" style="width: 328px;">
+							<div class="f2">
+								<label for="contrasena" >Contraseña</label>
+							</div>
+							
+							<input type="password" name="contrasena" required>
+							</div>
+							</div>
+				
+					<button colspan="1" type="submit"  id="boton1">Crear Cuenta</button>
                       
-					<button colspan="1" type="button"  id="boton2">	<i class="fab fa-facebook-f"></i>Iniciar Sesión con Facebook</button>
+				
                     <button type="button" class="btn btn-link">Aun no te has registrado?</button>
 					
 				</form>
