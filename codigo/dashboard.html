@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>dashboard</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="CSS/dashboardstyles.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="manifest" href="json/manifest.json">
+    </head>
+
+    <header>
+		<div class="wrapper" style:" width:100%;">
+			<h2 class="logo" ><img src="IMG/medifastlogo.png" alt="medicalvue" width="200" height="98"></h2>
+			
+			<nav>
+				 <label for="btn-menu" style="position:relative;background-color: rgba(0, 0,0,0.1); color:#EDECEC; font-size:40px; width: 35px;
+       height: 40px; margin-right:1300px; margin-top:5px;" class="fas fa-bars"></label>
+				
+			</nav>
+		</div>
+    </header>
+    
+	<body style="background-color: #285BBC ;">
+		
+		<!--Contenedor-->
+		<div id="general">
+			<div class=log >
+				<form action=""  method="post" action="create-account.php" method="POST" >
+					<h2>Crear cuenta</h2>
+				  <div class="froms">
+					   <div class="f1">
+							<div class ="f2">
+								<label for="name">Nombre</label>
+							</div>
+							<input type="text" name="name" required autofocus>
+					    </div>
+						<div class="f1">
+							<div  class ="f2">
+								<label for="surname">Apellidos</label>
+							</div>
+							
+							<input type="text" name="surname" required autofocus>
+						</div>
+					    <div class="f1">
+							<div class="f2" >
+								<label for="born">Fecha de nacimiento</label>
+							</div>
+							
+							<input type="date" name="born" required>
+						</div>
+						<div class="f1">
+							<div class="f2" >
+								<label for="especiality">Especialidad</label>
+							</div>
+						
+							<input type="text" name="especiality" required>
+						</div>
+						<div class="f1">
+							<div class="f2">
+								<label for="Phone">Telefono</label>
+							</div>
+							
+							<input type="text" name="Phone" required>
+						</div>
+						<div class="f1">
+							<div class="f2">
+								<label for="email">Correo electronico</label>
+							</div>
+							
+							<input type="email" name="email" aria-describedby="emailHelp" required>
+						</div>
+						<div class="f1" style="width: 328px;">
+							<div class="f2">
+								<label for="contrasena" >Contraseña</label>
+							</div>
+							
+							<input type="password" name="contrasena" required>
+							</div>
+							</div>
+				
+					<button colspan="1" type="submit"  id="boton1">Crear Cuenta</button>
+                      
+				
+					
+				</form>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/7edcc08e48.js" crossorigin="anonymous"></script>
+	</body>
+</html>
