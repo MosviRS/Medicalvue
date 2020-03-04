@@ -132,5 +132,35 @@ h2
 	margin-bottom: 0px;
 	
 }
-	
+button
+{   
+	width: 50%;
+	margin: 10px;
+	margin-bottom: 0px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 17px;
+	border: none;
+	border-bottom: 1px solid #22e3ff;
+	text-indent:25px;
+	font-weight: bold;
 }
+#boton1
+{   
+	
+    margin-right: 100%;
+	background:#3ECBC0;
+	color: #FFF;
+	padding:10px;
+	border-radius: 5px;
+	position: relative;
+	top: 10px;
+
+}
+#boton1:hover
+{
+	cursor: pointer;
+	background-color: #1a8292;
+}
+	
+
