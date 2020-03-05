@@ -54,11 +54,13 @@
 }
  
 .headr .wrapper {
+	position: relative;
     width:90%; /* Establecemos que el ancho sera del 90% */
     height:100px;
 	max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
 	margin:auto; /* Centramos los elementos */
-	overflow:hidden; /* Eliminamos errores de float */
+	overflow:hidden;
+	right: 0px; /* Eliminamos errores de float */
 }
  
 .headr .logo {
