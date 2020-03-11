@@ -18,7 +18,7 @@ form
 {
 	
 	width: 400px;
-	height: 390px;
+	height: 430px;
 	margin: auto;
 	background: #FFF;
 	padding: 10px 20px;
@@ -60,6 +60,13 @@ input
 	text-indent:25px;
 
 
+}
+b{
+	width: 100%;
+	margin: 10px;
+	margin-left:10%;
+	margin-top: 30px;
+	text-align: center;
 }
 button
 {
@@ -121,6 +128,23 @@ div#general
 	margin-top:20px;
 	width: 400px;
 	height: 390px;
+}
+.regis{
+	position:relative;
+	width: 100%;
+	left:10%;
+	font-size: 13px;
+}
+.regis b{
+	width: 100%;
+	margin: 10px;
+	margin-left:10%;
+	margin-top: 30px;
+	text-align: center;
+}
+.regis a{
+	margin: 0px;
+	padding-top: 0px;
 }
 @media (max-width: 480px)  {
 	div#general{

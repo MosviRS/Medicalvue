@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -11,13 +12,14 @@
 
 	</head>
 	<body>
+		
 		<div id=titulo>
             <h2 class="encab" ><img src="IMG/medifastlogo.png" alt="medicalvue" width="200" height="98"></h2>
 		</div>
 		<!--Contenedor-->
 		<div id="general">
 			<div class=log>
-				<form  method="post" action="create-account.php" method="POST">
+				<form  action="verif_login.php" method="post">
 					<h2>Login</h2>
 					<label for="Correo">Correo Electronico</label>
 					<div>
@@ -37,7 +39,10 @@
 					<button colspan="1" type="submit"  id="boton1">Iniciar Sesión</button>
                       
 					<button colspan="1" type="button"  id="boton2">	<i class="fab fa-facebook-f"></i>Iniciar Sesión con Facebook</button>
-                    <button onclick="location.href='CreateAccount.html'" type="button" class="btn btn-link">Aun no te has registrado?</button>
+					<button onclick="location.href='CreateAccount.html'" type="button" class="btn btn-link">¿Se te olvido tu crontaseña?</button>
+				<div class="regis">
+				    <b>¿No usas Medifast?<a href='CreateAccount.html' type="button" class="btn btn-link">Unete a nosotros</a></b>
+				</div>
 					
 				</form>
 			</div>
