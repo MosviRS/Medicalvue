@@ -73,7 +73,10 @@ div #general
 	width: 400px;
 	height: 100hv;
 }
-
+.imagen{
+	margin-top:7%;
+	position: absolute;
+}
 .froms{
 	position: relative;
 	margin-top: 10%;
@@ -89,7 +92,9 @@ form
 	padding: 10px 20px;
 	box-sizing: border-box;
 	margin-top: 0px;
-	
+	-webkit-box-shadow: -19px 9px 46px -16px rgba(0,0,0,0.63);
+   -moz-box-shadow: -19px 9px 46px -16px rgba(0,0,0,0.63);
+    box-shadow: -19px 9px 46px -16px rgba(0,0,0,0.63);
 	
 }
 h2
@@ -104,6 +109,11 @@ h2
 #titulo{
 	position: relative;
 	top:30px;
+}
+.contains{
+	display: flex;
+	flex-direction:horizontal;
+	align-items: center;
 }
 .f1{
 	position: relative;
@@ -247,6 +257,14 @@ form
 	line-height: 20px;
 	margin-bottom: 0px;
 	
+}
+.contains{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.imagen{
+	display:none;
 }
 
   }	

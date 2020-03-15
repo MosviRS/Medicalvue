@@ -16,7 +16,7 @@
 			<h2 class="logo" ><img src="IMG/medifastlogo.png" alt="medicalvue" width="200" height="98"></h2>
 			
 			<nav>
-				<a href="#">Iniciar sesion</a>
+				<a href="loginmedicos.html">Iniciar sesion</a>
 				
 			</nav>
 		</div>
@@ -25,12 +25,15 @@
 	<body style="background-color: #285BBC ;">
 		
 		<!--Contenedor-->
+		<div class="imagen">
+		<img src="img/doctor.png" alt="" class="banner-img">
+        </div>   
 		<div id="general">
 			
 				<form method="POST" action="verif_register.php" >
 					<h2 id="titulo" >Crear cuenta</h2>
 				  <div class="froms">
-
+                       <div class="contains">
 					   <div class="f1">
 							<div class ="f2">
 								<label for="name">Nombre</label>
@@ -44,7 +47,9 @@
 							
 							<input type="text" name="surname" required autofocus>
 						</div>
+					</div>
 					    
+                      <div class="contains">
 						<div class="f1">
 							<div class="f2">
 								<label for="email">Correo electronico</label>
@@ -60,6 +65,7 @@
 							<input type="password" name="contrasena" required>
 							</div>
 							</div>
+					 </div>
 				
 					<button colspan="1" type="submit"  id="boton1">Crear Cuenta</button>
                       

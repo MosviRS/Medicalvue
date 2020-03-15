@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['nombres'])){
+if(!isset($_SESSION['name'])){
     header("location:datos_medicos.php");
 }
 ?>
@@ -20,8 +20,8 @@ if(isset($_SESSION['nombres'])){
 	</head>
 	<body>
 		<div class="container">
-		
-			<?php
+		     
+		<?php
 			// Connection info. file
 			include 'conn.php';	
 			
@@ -33,8 +33,6 @@ if(isset($_SESSION['nombres'])){
 				die("Connection failed: " . mysqli_connect_error());
 			}
 			
-
-			if(!empty($_POST['email']) && !empty($_POST['password'])){
 			// data sent from form login.html 
 			$email = $_POST['email']; 
 			$password = $_POST['password'];
@@ -58,20 +56,16 @@ if(isset($_SESSION['nombres'])){
 				$_SESSION['loggedin'] = true;
 				$_SESSION['name'] = $row['nombres'];
 				$_SESSION['start'] = time();
-				$_SESSION['expire'] = $_SESSION['start'] + (60 * 60) ;						
+				$_SESSION['expire'] = $_SESSION['start'] + (1 * 60) ;						
 				
-				header("location:datos_medicos.php");
-					
-				
-
-
+			    header("location:datos_medicos.php");
 			
 			} else {
-
-						
-			}
-		}
+				echo "<div class='alert alert-danger mt-4' role='alert'>Email or Password are incorrects!
+				<p><a href='login.html'><strong>Please try again!</strong></a></p></div>";			
+			}	
 			?>
+		
 		</div>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
