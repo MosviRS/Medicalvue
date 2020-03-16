@@ -42,8 +42,8 @@ if(isset($_SESSION['nombres'])){
 					  alt="User picture">
 				  </div>
 				  <div class="user-info">
-					<span class="user-name"><?php echo $_SESSION["name"];?>
-					  <strong><?php echo $_SESSION["surname"];?></strong>
+					<span class="user-name"><?php echo $_SESSION['name'];?>
+					  <strong><?php  echo $_SESSION['name']?></strong>
 					</span>
 					<span class="user-role">Administrator</span>
 					<span class="user-status">

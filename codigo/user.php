@@ -8,6 +8,8 @@ class UserSession{
 
     public function setCurrentUser($user){
         $_SESSION['name'] = $user;
+        $_SESSION['start'] = time();
+	    $_SESSION['expire'] = $_SESSION['start'] + (1 * 60);
     }
 
     public function getCurrentUser(){
