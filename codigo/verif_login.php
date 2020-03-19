@@ -1,10 +1,4 @@
 
-<?php
-session_start();
-if(isset($_SESSION['nombres'])){
-    header("location:datos_medicos.php");
-}
-?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -23,8 +17,8 @@ if(isset($_SESSION['nombres'])){
 		include_once 'user.php';
 		include_once 'userlogin.php';
 
-		$userSession= new UserSession();
-		$user = new User();
+		 $userSession= new UserSession();
+		 $user = new User();
 			
 			if(isset($_SESSION['name'])){
 				$user->setUser($userSession->getCurrentUser());
@@ -33,9 +27,10 @@ if(isset($_SESSION['nombres'])){
 				$emailForm=$_POST['email'];
 				$passForm=$_POST['password'];
 
-				if($userSession->userExists($emailForm,$passForm)){
+				if($user->userExists($emailForm,$passForm)){
 					$userSession->setCurrentUser($emailForm);
 					$user->setUser($emailForm);
+					echo $user->getNombre();
 					header("location:datos_medicos.php");
 				}else{
 					echo "<div class='alert alert-danger mt-4' role='alert'>Email or Password are incorrects!

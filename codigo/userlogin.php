@@ -1,17 +1,17 @@
 <?php
 
-include 'conn.php';
 
+include 'DB.php';
 class User extends DB{
-
-    private $email;
-    private $username;
-    private $surname;
+    
+    public $email;
+    public $username;
+    public $surname;
     
 
     public function userExists($emailss,$pass){
-        	
-			
+       
+        include 'conn.php';
         // Connection variables
         $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
@@ -59,7 +59,7 @@ class User extends DB{
             $this->username = $currentUser['nombres'];
             $this->surname=$currentUser['apellidos'];
             $this->email = $currentUser['email'];
-            
+            echo $this->email;
             
         }
     }
@@ -69,6 +69,10 @@ class User extends DB{
     }
     public function getSurname(){
         return $this->$surname;
+    }
+    
+    public function getEmail(){
+        return $this->email;
     }
 }
 

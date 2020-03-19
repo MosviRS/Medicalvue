@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+if(isset($_SESSION['name'])){
+    header("location:datos_medicos.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>

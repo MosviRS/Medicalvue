@@ -1,5 +1,6 @@
 <?php
 include 'userlogin.php';
+include 'conn.php';
 session_start();
 $sessionofuser =$_SESSION['name'];
 if(!isset($sessionofuser)){
@@ -15,7 +16,8 @@ if(!isset($sessionofuser)){
         <title>dashboard</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="stylesheet" href="CSS/dashboardstyles.css">
-		<link rel="stylesheet" href="CSS/dashgeneral.css">
+        <link rel="stylesheet" href="CSS/dashgeneral.css">
+        <link rel="stylesheet" href="CSS/searchandnew.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="manifest" href="json/manifest.json">
     </head>
@@ -239,71 +241,69 @@ if(!isset($sessionofuser)){
 						</nav>
 					</div>
 				</header> 
-			  <div class="container-fluid">
-				<h2>Antes de comenzar</h2>
-				<hr>
-				<div class="row">
-				  <div class="form-group col-md-12">
-					<p>Ayudanos introduciendo los siguientes datos para una mejor experiencia.</p>
-					<p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
-						Github</a>, it contains more themes and background image option</p>
-                  </div>
-
+			  
+                <div class="search-paci">
+				  <div>
+					<div class="input-group">
+					  <input type="text" class="form-control search-menu" placeholder="Search...">
+					  <div class="input-group-append">
+						<span class="input-group-text">
+						  <i class="fa fa-search" aria-hidden="true"></i>
+						</span>
+					  </div>
+					</div>
+				  </div>
+				</div>
+                
                   <div id="general">
                     
-                        <form action=""  method="post" action="create-account.php" method="POST" >
-                            <h2 id="titulo" >Mis Datos</h2>
-                          <div class="froms">
-        
-                               <div class="f1">
-                                    <div class ="f2">
-                                        <label for="name">Nombre</label>
+                  <div class="container">
+                                <div class="jumbotron">
+                                        <div class="card">
+                                        <div class="card-header">
+                                            Medicamentos
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Datos de tabla Medicamentos</h5>
+                                                <table class="table table-hover table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        
+                                                        <th>Nombre</th>
+                                                        <th>Apellidos</th>
+                                                        <th>Telefono</th>
+                                                        <th>Direccion</th>
+                                                        <th>Nacimiento</th>
+                                                        <th>Sexo</th>
+                                                        <th>Email</th>
+
+                                                        <th class="text-center">Accion</th>
+                                                    </tr>    
+                                                </thead>
+                                                <tbody> 
+                                                    <tr>
+                                                        <th>Juan diaz</th>
+                                                        <th>Gonzales Sanabria</th>
+                                                        <th>733425221</th>
+                                                        <th>San dimas,los postales. no.34.</th>
+                                                        <th>17/02/1999</th>
+                                                        <th>M</th>
+                                                        <th><a href="" >mosvi_randy@hotmail.com</a></th>
+                                                        <th class="text-center">
+                                                           
+                                                            <a href="" class="btn btn-info btn-sm badge-pill" style="width:80px;" role="button" aria-pressed="true"><i class="fas fa-magic"></i></a>
+                                                          
+                                                        </th>
+                                                    </tr>    
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                        </div>
                                     </div>
-                                    <input type="text" name="name" required autofocus>
                                 </div>
-                                <div class="f1">
-                                    <div  class ="f2">
-                                        <label for="surname">Apellidos</label>
-                                    </div>
-                                    
-                                    <input type="text" name="surname" required autofocus>
-                                </div>
-                                <div class="f1">
-                                    <div class="f2" >
-                                        <label for="born">Fecha de nacimiento</label>
-                                    </div>
-                                    
-                                    <input type="date" name="born" required>
-                                </div>
-                                <div class="f1">
-                                    <div class="f2" >
-                                        <label for="especiality">Especialidad</label>
-                                    </div>
-                                
-                                    <input type="text" name="especiality" required>
-                                </div>
-                                <div class="f1">
-                                    <div class="f2">
-                                        <label for="Phone">Telefono</label>
-                                    </div>
-                                    
-                                    <input type="text" name="Phone" required>
-                                </div>
-                                <div class="f1">
-                                    <div class="f2">
-                                        <label for="email">Correo electronico</label>
-                                    </div>
-                                    
-                                    <input type="email" name="email" aria-describedby="emailHelp" required>
-                                </div>
-                               
-                                    </div>
-                        
-                            <button colspan="1" type="submit"  id="boton1">Guardar</button>
-                              
-                        
                             
-                        </form>
+                        <div>
                     
                 </div>
 				 

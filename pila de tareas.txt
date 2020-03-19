@@ -1,0 +1,3 @@
+-add component sweetalert
+-modify Data base
+-create button new record

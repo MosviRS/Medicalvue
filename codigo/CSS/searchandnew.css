@@ -1,0 +1,12 @@
+.search-paci{
+display: absolute;
+width: 40%;
+margin-left:53%;
+}
+@media (max-width: 768px)  {
+	.search-paci{
+        display: relative;
+        width: 100%;
+        margin:0px;
+        }
+}
