@@ -1,10 +1,6 @@
 <?php
-include 'userlogin.php';
-session_start();
-$sessionofuser =$_SESSION['name'];
-if(!isset($sessionofuser)){
-  header("location:loginmedicos.php");
-}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +37,9 @@ if(!isset($sessionofuser)){
 					  alt="User picture">
 				  </div>
 				  <div class="user-info">
-					<span class="user-name"><?php ?>
-					  <strong><?php  echo $_SESSION['name'];?></strong>
+					<span class="user-name"><?php 
+					   ?>
+					  <strong><?php echo $_SESSION['nombres'] ;?></strong>
 					</span>
 					<span class="user-role">Administrator</span>
 					<span class="user-status">
@@ -71,7 +68,7 @@ if(!isset($sessionofuser)){
 					  <span>General</span>
 					</li>
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="tabla_pacientes.php" onclick=>
 						<i class="fas fa-user-injured"></i>
 						<span>Pacientes</span>
 						<span class="badge badge-pill badge-warning">New</span>
@@ -115,7 +112,7 @@ if(!isset($sessionofuser)){
 					  </div>
 					</li>
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="tabla_citas.php">
 						<i class="fas fa-calendar-week"></i>
 						<span>Citas</span>
 					  </a>
@@ -141,7 +138,7 @@ if(!isset($sessionofuser)){
 					</li>
 					
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="tabla_medicamentos.php">
 						<i class="fas fa-capsules"></i>
 						<span>Medicamentos</span>
 					  </a>
@@ -251,7 +248,7 @@ if(!isset($sessionofuser)){
 
                   <div id="general">
                     
-                        <form action=""  method="post" action="create-account.php" method="POST" >
+                        <form action="entidades/datos_medics.php"  method="post" action="create-account.php" method="POST" >
                             <h2 id="titulo" >Mis Datos</h2>
                           <div class="froms">
         
@@ -273,28 +270,30 @@ if(!isset($sessionofuser)){
                                         <label for="born">Fecha de nacimiento</label>
                                     </div>
                                     
-                                    <input type="date" name="born" required>
+                                    <input type="date" name="born" required autofocus>
                                 </div>
                                 <div class="f1">
                                     <div class="f2" >
                                         <label for="especiality">Especialidad</label>
                                     </div>
                                 
-                                    <input type="text" name="especiality" required>
+                                    <input type="text" name="especiality" required autofocus> 
                                 </div>
                                 <div class="f1">
                                     <div class="f2">
                                         <label for="Phone">Telefono</label>
                                     </div>
                                     
-                                    <input type="text" name="Phone" required>
+                                    <input type="text" name="Phone" required autofocus>
                                 </div>
                                 <div class="f1">
                                     <div class="f2">
-                                        <label for="email">Correo electronico</label>
+										<label for="email">Correo electronico</label>
+										
                                     </div>
                                     
-                                    <input type="email" name="email" aria-describedby="emailHelp" required>
+									<input type="email" name="email" aria-describedby="emailHelp" required>
+									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                                
                                     </div>

@@ -1,12 +1,14 @@
 <?php
-include 'userlogin.php';
-include 'conn.php';
+
+
 session_start();
 $sessionofuser =$_SESSION['name'];
 if(!isset($sessionofuser)){
   header("location:loginmedicos.php");
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -24,7 +26,49 @@ if(!isset($sessionofuser)){
 
 
 	<body translate="no" style="background-color: rgb(239, 241, 247);">
-		
+		<!-- Modal -->
+<div class="modal fade"  id="form-citas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cita</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<form style="height:10%;">
+
+			<div class="form-group ">
+				<label for="exampleInputPassword1">Nombre del Paciente</label>
+				<input type="text" class="form-control" id="medicamento" placeholder="Paciente" required autofocus>
+			</div>
+			<div class="form-group">
+
+			<label for="validationDefault01">Fecha de cita</label>
+			<input type="date" class="form-control" id="validationDefault01" placeholder="First name" required>
+			</div>
+			
+			<div class="mb-3">
+				<label for="validationTextarea">Observaciones</label>
+				<textarea class="form-control is-invalid" rows="5" id="validationTextarea" placeholder="Observaciones" required></textarea>
+				<div class="invalid-feedback">
+				Please enter a message in the textarea.
+				</div>
+               </div>
+			
+			<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="submit"name="guardarmedica" class="btn btn-primary">Guardar datos</button>
+			</div>
+			</div>
+			
+			</form>
+      </div>
+    </div>
+  </div>
+</div>
+
 		<div class="page-wrapper chiller-theme toggled">
 			<a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
 			  <i class="fas fa-bars"></i>
@@ -73,7 +117,7 @@ if(!isset($sessionofuser)){
 					  <span>General</span>
 					</li>
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="tabla_pacientes.php">
 						<i class="fas fa-user-injured"></i>
 						<span>Pacientes</span>
 						<span class="badge badge-pill badge-warning">New</span>
@@ -117,7 +161,7 @@ if(!isset($sessionofuser)){
 					  </div>
 					</li>
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="tabla_citas.php">
 						<i class="fas fa-calendar-week"></i>
 						<span>Citas</span>
 					  </a>
@@ -143,7 +187,7 @@ if(!isset($sessionofuser)){
 					</li>
 					
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="tabla_medicamentos.php">
 						<i class="fas fa-capsules"></i>
 						<span>Medicamentos</span>
 					  </a>
@@ -261,6 +305,9 @@ if(!isset($sessionofuser)){
                                         <div class="card">
                                         <div class="card-header">
                                             Citas
+											<span style="margin-left:80%;">
+											<a href="" class="btn btn-success btn-sm" role="button" aria-pressed="true" data-toggle="modal" data-target="#form-citas">Nuevo</a>
+						                   </span>
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">Datos de tabla Citas</h5>

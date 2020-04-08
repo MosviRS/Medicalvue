@@ -2,12 +2,11 @@
 
 
 include 'DB.php';
+
+
 class User extends DB{
-    
-    public $email;
-    public $username;
-    public $surname;
-    
+
+   
 
     public function userExists($emailss,$pass){
        
@@ -47,33 +46,9 @@ class User extends DB{
             return false;
             		
         }
-       
-     
-    }
-
-    public function setUser($emails){
-        $query = $this->connect()->prepare('SELECT * FROM users WHERE email = :emails');
-        $query->execute(['emails' => $emails]);
-
-        foreach ($query as $currentUser) {
-            $this->username = $currentUser['nombres'];
-            $this->surname=$currentUser['apellidos'];
-            $this->email = $currentUser['email'];
-            echo $this->email;
-            
-        }
-    }
-
-    public function getNombre(){
-        return $this->username;
-    }
-    public function getSurname(){
-        return $this->$surname;
-    }
     
-    public function getEmail(){
-        return $this->email;
     }
+
 }
 
 ?>

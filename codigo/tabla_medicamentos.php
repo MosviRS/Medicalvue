@@ -1,12 +1,14 @@
+
 <?php
-include 'userlogin.php';
-include 'conn.php';
+
 session_start();
 $sessionofuser =$_SESSION['name'];
 if(!isset($sessionofuser)){
   header("location:loginmedicos.php");
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -24,7 +26,55 @@ if(!isset($sessionofuser)){
 
 
 	<body translate="no" style="background-color: rgb(239, 241, 247);">
-		
+
+     
+
+
+<!-- Modal -->
+<div class="modal fade"  id="form-medicamentos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Medicamento</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<form style="height:10%;" action="entidades/medicamentos.php" method="post" > 
+
+			<div class="form-group ">
+				<label for="exampleInputPassword1">Nombre Medicamento</label>
+				<input type="text" name=nombre class="form-control" id="medicamento" placeholder="Medicamento" required autofocus>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Forma Farmaceutica</label>
+				<input type="text" name =formaf class="form-control" id="ffarmaceutica" placeholder="F.Farmaceutica" required autofocus>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Presentacion</label>
+				<input type="text" name=prest class="form-control" id="presentacion" placeholder="Presentacion" required autofocus>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Concentracion</label>
+				<input type="text" name=conc class="form-control" id="concentracion" placeholder="Concentracion" required autofocus>
+			</div>
+			
+			<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="submit"name="guardarmedica" class="btn btn-primary">Guardar datos</button>
+			</div>
+			</div>
+			
+			</form>
+      </div>
+    </div>
+  </div>
+</div>
+	
+
+					
+
 		<div class="page-wrapper chiller-theme toggled">
 			<a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
 			  <i class="fas fa-bars"></i>
@@ -44,7 +94,7 @@ if(!isset($sessionofuser)){
 				  </div>
 				  <div class="user-info">
 					<span class="user-name"><?php ?>
-					  <strong><?php  echo $_SESSION['name'];?></strong>
+					  <strong><?php  echo $_SESSION['nombres'];?></strong>
 					</span>
 					<span class="user-role">Administrator</span>
 					<span class="user-status">
@@ -73,7 +123,7 @@ if(!isset($sessionofuser)){
 					  <span>General</span>
 					</li>
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="tabla_pacientes.php">
 						<i class="fas fa-user-injured"></i>
 						<span>Pacientes</span>
 						<span class="badge badge-pill badge-warning">New</span>
@@ -117,7 +167,7 @@ if(!isset($sessionofuser)){
 					  </div>
 					</li>
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="tabla_citas.php">
 						<i class="fas fa-calendar-week"></i>
 						<span>Citas</span>
 					  </a>
@@ -143,7 +193,7 @@ if(!isset($sessionofuser)){
 					</li>
 					
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="tabla_medicamentos.php">
 						<i class="fas fa-capsules"></i>
 						<span>Medicamentos</span>
 					  </a>
@@ -262,6 +312,9 @@ if(!isset($sessionofuser)){
                                         <div class="card">
                                         <div class="card-header">
                                             Medicamentos
+											<span style="margin-left:80%;">
+											<a href="" class="btn btn-success btn-sm"role="button" aria-pressed="true" data-toggle="modal" data-target="#form-medicamentos">Nuevo</a>
+						                   </span>
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">Datos de tabla Medicamentos</h5>

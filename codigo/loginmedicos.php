@@ -25,7 +25,11 @@ if(isset($_SESSION['name'])){
 		<div id="general">
 			<div class=log>
 				<form  action="verif_login.php" method="post">
-					
+					<?php
+					if(isset($errorlogin)){
+                       echo $errorlogin;
+					}
+					?>
 					<h2>Login</h2>
 					<label for="Correo">Correo Electronico</label>
 					<div>
