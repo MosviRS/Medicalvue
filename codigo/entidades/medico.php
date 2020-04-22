@@ -42,6 +42,7 @@ public function setUser($emails){
        $this->email = $currentUser['email'];
 
        $_SESSION['nombres']=$this->nombres." ".$this->apellidos;
+       $_SESSION['id']= $this->id;
        
    }
 }

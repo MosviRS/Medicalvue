@@ -19,7 +19,8 @@ if(!isset($sessionofuser)){
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="stylesheet" href="CSS/dashboardstyles.css">
         <link rel="stylesheet" href="CSS/dashgeneral.css">
-        <link rel="stylesheet" href="CSS/searchandnew.css">
+		<link rel="stylesheet" href="CSS/searchandnew.css">
+		<link rel="stylesheet" href="CSS/autocominputs.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="manifest" href="json/manifest.json">
     </head>
@@ -37,21 +38,25 @@ if(!isset($sessionofuser)){
         </button>
       </div>
       <div class="modal-body">
-			<form style="height:10%;">
-
-			<div class="form-group ">
+			<form style="height:10%;"  id="formcitas">
+            
+		
+			<!-- este input esta oculto type=hiddens-->
+		    <input name="idpaciente" type="hidden" class="form-control" id="idpaci" placeholder="ID" required autofocus>
+			
+			<div class="form-group autocompletar">
 				<label for="exampleInputPassword1">Nombre del Paciente</label>
-				<input type="text" class="form-control" id="medicamento" placeholder="Paciente" required autofocus>
+				<input type="text" name="nombre" class="form-control" id="nombrepaci" placeholder="Paciente" required autofocus>
 			</div>
 			<div class="form-group">
 
 			<label for="validationDefault01">Fecha de cita</label>
-			<input type="date" class="form-control" id="validationDefault01" placeholder="First name" required>
+			<input type="date" name="fecha" class="form-control" id="validationDefault01" placeholder="First name" required>
 			</div>
 			
 			<div class="mb-3">
 				<label for="validationTextarea">Observaciones</label>
-				<textarea class="form-control is-invalid" rows="5" id="validationTextarea" placeholder="Observaciones" required></textarea>
+				<textarea name="observaciones" class="form-control is-invalid" rows="5" id="validationTextarea" placeholder="Observaciones" required></textarea>
 				<div class="invalid-feedback">
 				Please enter a message in the textarea.
 				</div>
@@ -59,7 +64,8 @@ if(!isset($sessionofuser)){
 			
 			<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<button type="submit"name="guardarmedica" class="btn btn-primary">Guardar datos</button>
+			<button type="button"name="guardarmedica" class="btn btn-primary" onclick="datos=['entidades/paciente.php','#formcitas','entidades/mostardatoscitas.php','#tabladatoscitas'];
+			agregardatos(datos)">Guardar datos</button>
 			</div>
 			</div>
 			
@@ -309,7 +315,7 @@ if(!isset($sessionofuser)){
 											<a href="" class="btn btn-success btn-sm" role="button" aria-pressed="true" data-toggle="modal" data-target="#form-citas">Nuevo</a>
 						                   </span>
                                         </div>
-                                        <div class="card-body">
+                                        <div id="tabladatoscitas"  class="card-body">
                                             <h5 class="card-title">Datos de tabla Citas</h5>
                                                 <table class="table table-hover table-bordered">
                                                 <thead>
@@ -357,5 +363,18 @@ if(!isset($sessionofuser)){
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script src="https://kit.fontawesome.com/7edcc08e48.js" crossorigin="anonymous"></script>
 		<script src="JS/menuslide.js" type="text/javascript"></script>
+		<script src="JS/autocompletar.js" type="text/javascript"></script>
+		<script src="JS/sinitize.js" type="text/javascript"></script>
+		<script type="text/javascript">
+								
+									$( document ).ready(function() {
+										
+									       mostar('entidades/mostardatos.php','#tabladatospaciente');
+                                           });
+									
+								
+							  
+							
+		                        </script>
 	</body>
 </html>

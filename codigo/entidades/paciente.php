@@ -35,9 +35,14 @@ class paciente extends medicos{
     }
 }
 
+  
+    $paciente= new paciente();
+  
+    $paciente->cargar();
+  
 
-  $paciente= new paciente();
-  $paciente->cargar();
+  
+  
     
 
  

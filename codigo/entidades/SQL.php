@@ -1,10 +1,11 @@
 <?php 
   
 class metodosSQL {
-    public function vizualizar($sql){
+    public function vizualizar($conexion,$sql){
                
                
                $result=mysqli_query($conexion,$sql);
+               
                return mysqli_fetch_all($result,MYSQLI_ASSOC);
               
 

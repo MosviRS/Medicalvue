@@ -84,7 +84,9 @@ if(!isset($sessionofuser)){
                </div>
 			<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<button type="button" name="guardarmedica" class="btn btn-primary" onclick="agregardatos()">Guardar datos</button>
+			<button type="button" value="gurd" name="guardarmedica" class="btn btn-primary" onclick="
+			datos=['entidades/paciente.php','#formapacientes','entidades/mostardatos.php','#tabladatospaciente'];
+			agregardatos(datos)">Guardar datos</button>
 			</div>
 			</div>
 			
@@ -334,49 +336,32 @@ if(!isset($sessionofuser)){
 											<a href="" class="btn btn-success btn-sm" role="button" aria-pressed="true" data-toggle="modal" data-target="#form-pacientes">Nuevo</a>
 						                   </span>
                                         </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Datos de Pacientes</h5>
-                                                <table class="table table-hover table-bordered" style="text-size:12px;">
-                                                <thead>
-                                                    <tr>
-                                                        
-                                                        <th>Nombre</th>
-                                                        <th>Apellidos</th>
-                                                        <th>Telefono</th>
-                                                        <th>Direccion</th>
-                                                        <th>Nacimiento</th>
-                                                        <th>Sexo</th>
-                                                        <th>Email</th>
-
-                                                        <th class="text-center">Accion</th>
-                                                    </tr>    
-                                                </thead>
-                                                <tbody> 
-                                                    <tr>
-                                                        <th>Juan diaz</th>
-                                                        <th>Gonzales Sanabria</th>
-                                                        <th>733425221</th>
-                                                        <th>San dimas,los postales. no.34.</th>
-                                                        <th>17/02/1999</th>
-                                                        <th>M</th>
-                                                        <th><a href="" >mosvi_randy@hotmail.com</a></th>
-                                                        <th class="text-center">
-                                                           
-                                                            <a href="" class="btn btn-info btn-sm badge-pill" style="width:80px;" role="button" aria-pressed="true"><i class="fas fa-magic"></i></a>
-                                                          
-                                                        </th>
-                                                    </tr>    
-                                                </tbody>
-
-                                            </table>
+                                        <div id="tabladatospaciente" class="card-body" style="justify-content: flex-end;">
+										
+										   
                                         </div>
+										<div id="nextnav">
+										<nav aria-label="..." >
+											<ul class="pagination">
+												<li class="page-item disabled">
+												<a class="page-link" href="#" tabindex="-1">Previous</a>
+												</li>
+												<li class="page-item"><a class="page-link" href="#">1</a></li>
+												<li class="page-item active">
+												<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+												</li>
+												<li class="page-item"><a class="page-link" href="#">3</a></li>
+												<li class="page-item">
+												<a class="page-link" href="#">Next</a>
+												</li>
+											</ul>
+											</nav>
+										</div>
                                         </div>
                                     </div>
                                 </div>
                             
-                        <div>
-                    
-                </div>
+								
 				 
 		<script src="JS/menuslide.js" type="text/javascript"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -390,5 +375,16 @@ if(!isset($sessionofuser)){
 		<script src="JS/menuslide.js" type="text/javascript"></script>
 		<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 		<script src="JS/sinitize.js" type="text/javascript"></script>
+		<script type="text/javascript">
+								
+									$( document ).ready(function() {
+										
+									       mostar('entidades/mostardatos.php','#tabladatospaciente');
+                                           });
+									
+								
+							  
+							
+		                        </script>
 	</body>
 </html>

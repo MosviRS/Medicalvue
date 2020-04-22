@@ -41,7 +41,7 @@ if(!isset($sessionofuser)){
         </button>
       </div>
       <div class="modal-body">
-			<form style="height:10%;" action="entidades/medicamentos.php" method="post" > 
+			<form style="height:10%;" action="" id="formmedicamentos" method="post" > 
 
 			<div class="form-group ">
 				<label for="exampleInputPassword1">Nombre Medicamento</label>
@@ -62,7 +62,10 @@ if(!isset($sessionofuser)){
 			
 			<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<button type="submit"name="guardarmedica" class="btn btn-primary">Guardar datos</button>
+			<button type="button"name="guardarmedica" class="btn btn-primary" onclick="
+            let datos=['entidades/medicamentos.php','#formmedicamentos','entidades/mostardatosmedicam.php','#tabladatosmedicamentos'];
+			 agregardatos(datos);
+			">Guardar datos</button>
 			</div>
 			</div>
 			
@@ -316,36 +319,26 @@ if(!isset($sessionofuser)){
 											<a href="" class="btn btn-success btn-sm"role="button" aria-pressed="true" data-toggle="modal" data-target="#form-medicamentos">Nuevo</a>
 						                   </span>
                                         </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Datos de tabla Medicamentos</h5>
-                                                <table class="table table-hover table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Codigo</th>
-                                                        <th>Nombre</th>
-                                                        <th>F.Farmaceutica</th>
-                                                        <th>Presentacion</th>
-                                                        <th>Concentracion</th>
-                                                        <th class="text-center">Accion</th>
-                                                    </tr>    
-                                                </thead>
-                                                <tbody> 
-                                                    <tr>
-                                                        <th>1</th>
-                                                        <th>Paracetamol</th>
-                                                        <th>Caja de 10 tabletas</th>
-                                                        <th>Tableta</th>
-                                                        <th>100mg</th>
-                                                        <th class="text-center">
-                                                           
-                                                            <a href="" class="btn btn-info btn-sm badge-pill" style="width:80px;" role="button" aria-pressed="true"><i class="fas fa-magic"></i></a>
-                                                          
-                                                        </th>
-                                                    </tr>    
-                                                </tbody>
-
-                                            </table>
+                                        <div id="tabladatosmedicamentos" class="card-body">
+                                            
                                         </div>
+										<div id="nextnav">
+										<nav aria-label="..." >
+											<ul class="pagination">
+												<li class="page-item disabled">
+												<a class="page-link" href="#" tabindex="-1">Previous</a>
+												</li>
+												<li class="page-item"><a class="page-link" href="#">1</a></li>
+												<li class="page-item active">
+												<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+												</li>
+												<li class="page-item"><a class="page-link" href="#">3</a></li>
+												<li class="page-item">
+												<a class="page-link" href="#">Next</a>
+												</li>
+											</ul>
+											</nav>
+										</div>
                                         </div>
                                     </div>
                                 </div>
@@ -364,5 +357,17 @@ if(!isset($sessionofuser)){
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script src="https://kit.fontawesome.com/7edcc08e48.js" crossorigin="anonymous"></script>
 		<script src="JS/menuslide.js" type="text/javascript"></script>
+		<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
+		<script src="JS/sinitize.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		$( document ).ready(function() {
+										
+			mostar('entidades/mostardatosmedicam.php','#tabladatosmedicamentos');
+		});
+								 
+							 
+						   
+						 
+							 </script>
 	</body>
 </html>
