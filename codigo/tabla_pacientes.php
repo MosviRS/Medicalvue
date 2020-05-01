@@ -18,7 +18,7 @@ if(!isset($sessionofuser)){
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="stylesheet" href="CSS/dashboardstyles.css">
         <link rel="stylesheet" href="CSS/dashgeneral.css">
-        <link rel="stylesheet" href="CSS/searchandnew.css">
+        <link rel="stylesheet" href="CSS/new.css" type="text/css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="manifest" href="json/manifest.json">
     </head>
@@ -312,17 +312,17 @@ if(!isset($sessionofuser)){
 					</div>
 				</header> 
 			  
-                <div class="search-paci">
-				  <div>
+                
+				  <div class="">
 					<div class="input-group">
-					  <input type="text" class="form-control search-menu" placeholder="Search...">
+					  <input type="text" class="form-control" placeholder="Search...">
 					  <div class="input-group-append">
 						<span class="input-group-text">
 						  <i class="fa fa-search" aria-hidden="true"></i>
 						</span>
 					  </div>
 					</div>
-				  </div>
+				  
 				</div>
                 
                   <div id="general">

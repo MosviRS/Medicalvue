@@ -8,7 +8,9 @@
    $con=$conn->conectar();
    session_start();
    
-   $que="SELECT nombres,apellidos,telefono,direccion,sexo,email,edad FROM pacientes where fk_medico=".$_SESSION['id'].";";
+   $que="SELECT citas.id_cita, pacientes.nombres,pacientes.apellidos, citas.observaciones, citas.fech_cita FROM 
+   (datos_medics INNER JOIN pacientes ON datos_medics.fk_medico = pacientes.fk_medico) 
+   INNER JOIN citas ON pacientes.id_paciente = citas.fk_paciente WHERE pacientes.fk_medico=".$_SESSION['id'].";";
    $objsql= new metodosSQL();
    
 
@@ -18,10 +20,12 @@
         foreach ($array as $value) {
             $table=$table . '
                             <tr>
-                            <th>1</th>
-                            <th>Juan Diaz</th>
-                            <th>Signos de alerta</th>
-                            <th>12/04/2020</th>
+                            <th>'.$value['id_cita'].'</th>
+                            <th>'.$value['nombres'].'</th>
+                            <th>'.$value['apellidos'].'</th>
+                            <th>'.$value['observaciones'].'</th>
+                            <th>'.$value['fech_cita'].'</th>
+                            
                             
                             <th class="text-center">
                             
@@ -39,7 +43,8 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Codigo</th>
-                                                        <th>Nombre del paciente</th>
+                                                        <th>Nombre</th>
+                                                        <th>Apellidos</th>
                                                         <th>observaciones</th>
                                                         <th>fceha de cita</th>
                                                 

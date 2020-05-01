@@ -1,14 +1,22 @@
 
 
-.seari{
-display: absolute;
+.tress{
+display: relative;
 width: 50%;
-margin-left:53%;
+margin-right:300px;
+}
+.tress input{
+        background: #31353D ;
+        color:green;
+ }
+.dropdown-menu{
+ padding: 8px 8px 4px ;
+ background: #31353D;
 }
 
 
 @media (max-width: 768px)  {
-	.sear{
+	.tress{
         display: relative;
         width: 100%;
         margin:0px;

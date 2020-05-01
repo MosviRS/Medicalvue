@@ -1,0 +1,25 @@
+
+.tre {
+    display: relative;
+    width: 50%;
+    margin-right:300px;
+    background-color: #285BBC;
+    }
+.tre  input{
+            background: #31353D ;
+            color:green;
+ }
+ 
+ .dropdown-item:hover{
+    background: #282c33 !important; 
+ }
+
+       
+       
+       @media (max-width: 768px)  {
+           .tress{
+               display: relative;
+               width: 100%;
+               margin:0px;
+               }
+       }

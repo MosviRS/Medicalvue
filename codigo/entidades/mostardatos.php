@@ -25,10 +25,27 @@
                                             <th>'.$value['sexo'].'</th>
                                             <th><a href="" >'.$value['email'].'</a></th>
                                             <th>'.$value['edad'].'</th>
+
                                             <th class="text-center">
+                                            <div class="btn-group">
+
                                             
-                                                <a href="" class="btn btn-info btn-sm badge-pill" style="width:80px;" role="button" aria-pressed="true"><i class="fas fa-magic"></i></a>
+                                            <a type="button" class="btn btn-info btn-sm badge-pill dropdown-toggle"
+                                            data-toggle="dropdown" style="color:#FFFF; width:80px;" role="button" aria-pressed="true"><i class="fas fa-magic"></i><span class="caret"></span></a>
+                                            <div class="dropdown-menu  bg-dark" >
+                                            <a class="dropdown-item text-light" href="#"><i class="far fa-trash-alt fa-fw"></i>Eliminar</a>
+                                            <a class="dropdown-item text-light" href="#"><i class="far fa-edit fa-fw"></i></i>Modificar</a>
+                                            <a class="dropdown-item text-light" href="#"><i class="fas fa-file-medical-alt fa-fw""></i></i>Historial clinico</a>
+                                            </div>
+                                           
+                                            </div>
                                             
+                                            
+                                           
+                                         
+                                          
+                                            
+                                                
                                             </th>
                                         </tr>';
            
@@ -48,7 +65,7 @@
                     <th>Sexo</th>
                     <th>Email</th>
                     <th>Edad</th>
-
+                        
                     <th class="text-center">Accion</th>
                 </tr>    
             </thead>

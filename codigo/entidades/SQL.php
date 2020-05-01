@@ -19,5 +19,14 @@ class metodosSQL {
        
 
 }
+public function eliminar($conexion,$sql){
+     
+        
+
+    $result=mysqli_query($conexion,$sql);
+               
+    return get_result()->mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+}
 } 
 ?>

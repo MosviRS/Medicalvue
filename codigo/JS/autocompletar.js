@@ -36,9 +36,10 @@ function autocompletar(){
 
                     elementoLista.innerHTML = `<strong>${arrayDeCadenas[1].substr(0, tipoMascota.length)}</strong>${arrayDeCadenas[1].substr(tipoMascota.length)}`;
                     elementoLista.addEventListener('click', function(){
-                        inputMascota.text = this.innerText;
-                        inputMascota.value= arrayDeCadenas[0];
+                        inputMascota.value = this.innerText;
+                        
                         idmascota.value= arrayDeCadenas[0];
+                        
                         cerrarLista();
                         return false;
                     });

@@ -51,12 +51,12 @@ if(!isset($sessionofuser)){
 			<div class="form-group">
 
 			<label for="validationDefault01">Fecha de cita</label>
-			<input type="date" name="fecha" class="form-control" id="validationDefault01" placeholder="First name" required>
+			<input type="date" name="fecha" class="form-control" id="validationDefault01" placeholder="First name" required autofocus>
 			</div>
 			
 			<div class="mb-3">
 				<label for="validationTextarea">Observaciones</label>
-				<textarea name="observaciones" class="form-control is-invalid" rows="5" id="validationTextarea" placeholder="Observaciones" required></textarea>
+				<textarea name="observaciones" class="form-control is-invalid" rows="5" id="validationTextarea" placeholder="Observaciones" required autofocus></textarea>
 				<div class="invalid-feedback">
 				Please enter a message in the textarea.
 				</div>
@@ -64,7 +64,7 @@ if(!isset($sessionofuser)){
 			
 			<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<button type="button"name="guardarmedica" class="btn btn-primary" onclick="datos=['entidades/paciente.php','#formcitas','entidades/mostardatoscitas.php','#tabladatoscitas'];
+			<button type="button"name="guardarmedica" class="btn btn-primary" onclick="datos=['entidades/citas.php','#formcitas','entidades/mostardatoscitas.php','#tabladatoscitas'];
 			agregardatos(datos)">Guardar datos</button>
 			</div>
 			</div>
@@ -353,6 +353,7 @@ if(!isset($sessionofuser)){
                     
                 </div>
 				 
+				 
 		<script src="JS/menuslide.js" type="text/javascript"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -363,18 +364,19 @@ if(!isset($sessionofuser)){
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script src="https://kit.fontawesome.com/7edcc08e48.js" crossorigin="anonymous"></script>
 		<script src="JS/menuslide.js" type="text/javascript"></script>
-		<script src="JS/autocompletar.js" type="text/javascript"></script>
+		<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 		<script src="JS/sinitize.js" type="text/javascript"></script>
+		<script src="JS/autocompletar.js" type="text/javascript"></script>
 		<script type="text/javascript">
 								
-									$( document ).ready(function() {
+								$( document ).ready(function() {
 										
-									       mostar('entidades/mostardatos.php','#tabladatospaciente');
+									       mostar('entidades/mostardatoscitas.php','#tabladatoscitas');
                                            });
 									
 								
 							  
 							
-		                        </script>
+		                        </script> 
 	</body>
 </html>
