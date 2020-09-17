@@ -19,7 +19,7 @@ if(!isset($sessionofuser)){
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="stylesheet" href="CSS/dashboardstyles.css">
         <link rel="stylesheet" href="CSS/dashgeneral.css">
-		<link rel="stylesheet" href="CSS/searchandnew.css">
+		<link rel="stylesheet" href="CSS/new.css" type="text/css">
 		<link rel="stylesheet" href="CSS/autocominputs.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="manifest" href="json/manifest.json">
@@ -66,6 +66,54 @@ if(!isset($sessionofuser)){
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			<button type="button"name="guardarmedica" class="btn btn-primary" onclick="datos=['entidades/citas.php','#formcitas','entidades/mostardatoscitas.php','#tabladatoscitas'];
 			agregardatos(datos)">Guardar datos</button>
+			</div>
+			</div>
+			
+			</form>
+      </div>
+    </div>
+  </div>
+</div>
+		<!-- Modal actualizar-->
+<div class="modal fade"  id="form-citas-actualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cita</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<form style="height:10%;"  id="formcitas-actualziar">
+            
+		
+			<!-- este input esta oculto type=hiddens-->
+			<input name="idcitas" type="hidden" class="form-control" id="idcitas" placeholder="IDcita" required autofocus>
+		    <input name="idpaciente" type="hidden" class="form-control" id="idpaci" placeholder="ID" required autofocus>
+			
+			<div class="form-group autocompletar">
+				<label for="exampleInputPassword1">Nombre del Paciente</label>
+				<input type="text" name="nombre" class="form-control" id="nombrepaci" placeholder="Paciente" required autofocus>
+			</div>
+			<div class="form-group">
+
+			<label for="validationDefault01">Fecha de cita</label>
+			<input type="date" name="fecha" class="form-control" id="validationDefault01" placeholder="First name" required autofocus>
+			</div>
+			
+			<div class="mb-3">
+				<label for="validationTextarea">Observaciones</label>
+				<textarea name="observaciones" class="form-control is-invalid" rows="5" id="validationTextarea" placeholder="Observaciones" required autofocus></textarea>
+				<div class="invalid-feedback">
+				Please enter a message in the textarea.
+				</div>
+               </div>
+			
+			<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="button"name="guardarmedica" class="btn btn-warning" onclick="datos=['entidades/citas.php','#formcitas-actualziar','entidades/mostardatoscitas.php','#tabladatoscitas'];
+			 actualilzar(datos)">Actualizar</button>
 			</div>
 			</div>
 			
@@ -268,7 +316,7 @@ if(!isset($sessionofuser)){
 				  <i class="fa fa-envelope"></i>
 				  <span class="badge badge-pill badge-success notification">7</span>
 				</a>
-				<a href="#">
+				<a href="datos_medicos.php">
 				  <i class="fa fa-cog"></i>
 				  <span class="badge-sonar"></span>
 				</a>

@@ -1,6 +1,11 @@
 <?php
 
-
+include_once 'verif_login.php';
+$sessionofuser =(empty($_SESSION['name'])) ? NULL : $_SESSION['name'];
+if(!isset($sessionofuser)){
+	//session_start();
+    header("location:loginmedicos.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -213,7 +218,7 @@
 				  <i class="fa fa-envelope"></i>
 				  <span class="badge badge-pill badge-success notification">7</span>
 				</a>
-				<a href="#">
+				<a href="datos_medicos.php">
 				  <i class="fa fa-cog"></i>
 				  <span class="badge-sonar"></span>
 				</a>

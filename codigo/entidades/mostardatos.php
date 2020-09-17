@@ -8,16 +8,19 @@
    $con=$conn->conectar();
    session_start();
    
-   $que="SELECT nombres,apellidos,telefono,direccion,sexo,email,edad FROM pacientes where fk_medico=".$_SESSION['id'].";";
+   $que="SELECT id_paciente,nombres,apellidos,telefono,direccion,sexo,email,edad FROM pacientes where fk_medico=".$_SESSION['id'].";";
    $objsql= new metodosSQL();
    
-
+   $data = array("'entidadesmodificar/pacientesUpdate.php'", "'#formapacientes-actu'");
+   $emin = array("'entidadeseliminar/eliminarpaci.php'", "'entidades/mostardatos.php'","'#tabladatospaciente'");
+   
    $table="";
    $array=$objsql->vizualizar($con,$que);
-
+   
         foreach ($array as $value) {
             $table=$table . '
                                         <tr>
+                                            <th style="display:none">'.$value['id_paciente'].'</th>
                                             <th>'.$value['nombres'].'</th>
                                             <th>'.$value['apellidos'].'</th>
                                             <th>'.$value['telefono'].'</th>
@@ -33,18 +36,13 @@
                                             <a type="button" class="btn btn-info btn-sm badge-pill dropdown-toggle"
                                             data-toggle="dropdown" style="color:#FFFF; width:80px;" role="button" aria-pressed="true"><i class="fas fa-magic"></i><span class="caret"></span></a>
                                             <div class="dropdown-menu  bg-dark" >
-                                            <a class="dropdown-item text-light" href="#"><i class="far fa-trash-alt fa-fw"></i>Eliminar</a>
-                                            <a class="dropdown-item text-light" href="#"><i class="far fa-edit fa-fw"></i></i>Modificar</a>
-                                            <a class="dropdown-item text-light" href="#"><i class="fas fa-file-medical-alt fa-fw""></i></i>Historial clinico</a>
+                                            <a class="dropdown-item text-light" onclick="Eliminar('.$value['id_paciente'].','.$emin[0].','.$emin[1].','.$emin[2].');"><i class="far fa-trash-alt fa-fw"></i>Eliminar</a>
+                                            <a class="dropdown-item text-light" data-toggle="modal" data-target="#form-pacientes-actualizar" onclick="modificar('.$value['id_paciente'].','.$data[0].','.$data[1].');"><i class="far fa-edit fa-fw"></i></i>Modificar</a>
+                                            <a class="dropdown-item text-light" href="historialclinico.php"><i class="fas fa-file-medical-alt fa-fw""></i></i>Historial clinico</a>
                                             </div>
                                            
                                             </div>
-                                            
-                                            
-                                           
-                                         
                                           
-                                            
                                                 
                                             </th>
                                         </tr>';
@@ -57,7 +55,7 @@
             <table class="table table-hover table-bordered" style="text-size:12px;">
             <thead>
                 <tr>
-                    
+                    <th style="display:none">Codigo</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>Telefono</th>

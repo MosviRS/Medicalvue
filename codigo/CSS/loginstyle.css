@@ -11,7 +11,7 @@ body
 	background-attachment: fixed;
 	margin: 0;
 	font-family: sans-serif;
-	
+
 
 }
 form
@@ -26,6 +26,7 @@ form
 	margin-top: 10px;
 	border-radius: 10px;
 	border: #17acc2 solid 3px;
+	
 }
 h1
 {
@@ -182,4 +183,10 @@ div#general
 	position: relative;
 	right:80px;
 	
+}
+.error{
+	position: relative;
+	width: 100%;
+	margin: auto;
+	left:0%;
 }

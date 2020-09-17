@@ -11,17 +11,13 @@
 
  $id=(empty($_POST["id"])) ? NULL : $_POST["id"];
 
- $que="DELETE FROM pacientes where id_paciente=".$id.";";
+ $que="SELECT id_paciente,nombres,apellidos,telefono,fech_nac,email,sexo,edad,direccion
+  FROM pacientes where id_paciente=".$id.";";
 
- $array=$objsql->eliminar($con,$que);
+ $array=$objsql->vizualizar($con,$que);
+ 
+ echo json_encode($array);
 
-  if($array==1){
-    echo 'successElim';
-  }
-       
-
+ 
 
 ?>
-
-  
-  

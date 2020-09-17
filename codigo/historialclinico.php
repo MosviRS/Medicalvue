@@ -1,12 +1,22 @@
+<?php
+
+session_start();
+$sessionofuser =(empty($_SESSION['name'])) ? NULL : $_SESSION['name'];
+if(!isset($sessionofuser)){
+	//session_start();
+    header("location:loginmedicos.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Crear Cuenta</title>
+        <title>Historial Clinico</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-		<link rel="stylesheet" href="CSS/creaAcco.css">
+		<link rel="stylesheet" href="CSS/historialclin.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="manifest" href="json/manifest.json">
     </head>
@@ -15,62 +25,73 @@
 		<div class="wrapper">
 			<h2 class="logo" ><img src="IMG/medifastlogo.png" alt="medicalvue" width="200" height="98"></h2>
 			
-			<nav>
-				<a href="loginmedicos.php">Iniciar sesion</a>
-				
-			</nav>
 		</div>
-    </header>
-    
-	<body style="background-color: #285BBC ;">
-		
+	</header>
+	<body>
 		<!--Contenedor-->
-		<div class="imagen">
-		<img src="img/doctor.png" alt="" class="banner-img">
-        </div>   
+		 
 		<div id="general">
 			
 				<form method="POST"  action="verif_register.php" id="formregistro" >
-					<h2 id="titulo" >Crear cuenta</h2>
+					<h2 id="titulo" >Historial Clinico</h2>
 				  <div class="froms">
                        <div class="contains">
 					   <div class="f1">
 							<div class ="f2">
-								<label for="name">Nombre</label>
+								<label for="name">Enfermedad Cronica</label>
 							</div>
-							<input type="text" name="name" required autofocus>
+							<input type="text" name="enferemdad" placeholder="Enfermedad Cronica" required autofocus>
 					    </div>
 						<div class="f1">
 							<div  class ="f2">
-								<label for="surname">Apellidos</label>
+								<label for="surname">Consumo de Drogas</label>
 							</div>
 							
-							<input type="text" name="surname" required autofocus>
+							<input type="text" name="consumo 
+							drogas" placeholder="Consumo de Drogas" required autofocus>
 						</div>
 					</div>
 					    
                       <div class="contains">
 						<div class="f1">
 							<div class="f2">
-								<label for="email">Correo electronico</label>
+								<label for="email">Alergias</label>
 							</div>
 							
-							<input type="email" name="email" aria-describedby="emailHelp" required>
+							<input type="text" name="alergias" placeholder="Alergias"  required autofocus>
+						</div>
+						<div class="f1">
+							<div class="f2">
+								<label for="email">Tipo de Sangre</label>
+							</div>
+							
+							<input type="text" name="sangre" placeholder="Sangre" required autofocus>
 						</div>
 						<div class="f1" style="width: 328px;">
 							<div class="f2">
-								<label for="contrasena" >Contraseña</label>
+								<label for="contrasena" >Operaciones</label>
 							</div>
 							
-							<input type="password" name="contrasena" required>
+							<input type="text" name="contrasena" placeholder="Operaciones" required>
 							</div>
-							</div>
+							
+						</div>
+						<div class="contains">
+							<div class="f1">
+										<div class="f2">
+										<button colspan="1" type="submit"  id="button1" >Guardar Datos</button>
+										</div>
+										
+									</div>
+									<div class="f1">
+										<div class="f2">
+										 <a href='datos_medicos.php' colspan="1" type="button"  id="button2" >Cancelar</a>
+										</div>	
+								
+									</div>
+							</div>	 
+							
 					 </div>
-				
-					<button colspan="1" type="submit"  id="boton1" >Crear Cuenta</button>
-                      
-				
-					
 				</form>
 			
 		</div>

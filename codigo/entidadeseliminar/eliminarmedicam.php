@@ -11,7 +11,7 @@
 
  $id=(empty($_POST["id"])) ? NULL : $_POST["id"];
 
- $que="DELETE FROM pacientes where id_paciente=".$id.";";
+ $que="DELETE FROM medicamentos where id_medicamento=".$id.";";
 
  $array=$objsql->eliminar($con,$que);
 
@@ -22,6 +22,3 @@
 
 
 ?>
-
-  
-  

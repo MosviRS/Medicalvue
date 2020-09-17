@@ -48,7 +48,7 @@
 					database and the account is created
 					*/
 					$name = $_POST['name'];
-					$apellidos="cruz";
+					$apellidos=$_POST['surname'];
 					$email = $_POST['email'];
 					$pass = $_POST['contrasena'];
 
@@ -61,7 +61,7 @@
 					if (mysqli_query($conn, $query)) {
                         
 						
-						header("location:loginmedicos.html");	
+						header("location:loginmedicos.php");	
 						} else {
 							echo "Error: " . $query . "<br>" . mysqli_error($conn);
 						}	

@@ -13,6 +13,8 @@
    INNER JOIN citas ON pacientes.id_paciente = citas.fk_paciente WHERE pacientes.fk_medico=".$_SESSION['id'].";";
    $objsql= new metodosSQL();
    
+   $data = array("'entidadesmodificar/citasUpdate.php'","'#formcitas-actualziar'");
+   $emin = array("'entidadeseliminar/eliminarcitas.php'","'entidades/mostardatoscitas.php'","'#tabladatoscitas'");
 
    $table="";
    $array=$objsql->vizualizar($con,$que);
@@ -29,7 +31,16 @@
                             
                             <th class="text-center">
                             
-                                <a href="" class="btn btn-info btn-sm badge-pill" style="width:80px;" role="button" aria-pressed="true"><i class="fas fa-magic"></i></a>
+                            <div class="btn-group">
+          
+                            <a type="button" class="btn btn-info btn-sm badge-pill dropdown-toggle"
+                            data-toggle="dropdown" style="color:#FFFF; width:80px;" role="button" aria-pressed="true"><i class="fas fa-magic"></i><span class="caret"></span></a>
+                            <div class="dropdown-menu  bg-dark" >
+                            <a class="dropdown-item text-light" onclick="Eliminar('.$value['id_cita'].','.$emin[0].','.$emin[1].','.$emin[2].');"><i class="far fa-trash-alt fa-fw"></i>Eliminar</a>
+                            <a class="dropdown-item text-light" data-toggle="modal" data-target="#form-citas-actualizar" onclick="
+                            modificar('.$value['id_cita'].','.$data[0].','.$data[1].');"><i class="far fa-edit fa-fw"></i></i>Modificar</a>
+                            </div>
+                            </div>
                             
                             </th>
                         </tr> ';

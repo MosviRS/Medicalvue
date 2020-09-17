@@ -19,7 +19,7 @@ if(!isset($sessionofuser)){
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="stylesheet" href="CSS/dashboardstyles.css">
 		<link rel="stylesheet" href="CSS/dashgeneral.css">
-		<link rel="stylesheet" href="CSS/searchandnew.css">
+		<link rel="stylesheet" href="CSS/new.css" type="text/css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="manifest" href="json/manifest.json">
     </head>
@@ -43,6 +43,7 @@ if(!isset($sessionofuser)){
       <div class="modal-body">
 			<form style="height:10%;" action="" id="formmedicamentos" method="post" > 
 
+           
 			<div class="form-group ">
 				<label for="exampleInputPassword1">Nombre Medicamento</label>
 				<input type="text" name=nombre class="form-control" id="medicamento" placeholder="Medicamento" required autofocus>
@@ -66,6 +67,51 @@ if(!isset($sessionofuser)){
             let datos=['entidades/medicamentos.php','#formmedicamentos','entidades/mostardatosmedicam.php','#tabladatosmedicamentos'];
 			 agregardatos(datos);
 			">Guardar datos</button>
+			</div>
+			</div>
+			
+			</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal actualizar-->
+<div class="modal fade"  id="form-medicamentos-actualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Medicamento</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<form style="height:10%;" action="" id="formmedicamentos-actualizar" method="post" > 
+			<input name="idmedica" type="hidden" class="form-control" id="idmedica" placeholder="IDmedico" required autofocus>
+			<div class="form-group ">
+				<label for="exampleInputPassword1">Nombre Medicamento</label>
+				<input type="text" name=nombre class="form-control" id="medicamento" placeholder="Medicamento" required autofocus>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Forma Farmaceutica</label>
+				<input type="text" name =formaf class="form-control" id="ffarmaceutica" placeholder="F.Farmaceutica" required autofocus>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Presentacion</label>
+				<input type="text" name=prest class="form-control" id="presentacion" placeholder="Presentacion" required autofocus>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Concentracion</label>
+				<input type="text" name=conc class="form-control" id="concentracion" placeholder="Concentracion" required autofocus>
+			</div>
+			
+			<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="button"name="guardarmedica" class="btn btn-warning" onclick="
+            let datos=['entidades/medicamentos.php','#formmedicamentos-actualizar','entidades/mostardatosmedicam.php','#tabladatosmedicamentos'];
+			actualilzar(datos);
+			">Actualizar datos</button>
 			</div>
 			</div>
 			
@@ -271,7 +317,7 @@ if(!isset($sessionofuser)){
 				  <i class="fa fa-envelope"></i>
 				  <span class="badge badge-pill badge-success notification">7</span>
 				</a>
-				<a href="#">
+				<a href="datos_medicos.php">
 				  <i class="fa fa-cog"></i>
 				  <span class="badge-sonar"></span>
 				</a>

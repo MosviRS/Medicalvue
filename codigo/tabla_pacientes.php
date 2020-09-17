@@ -25,8 +25,8 @@ if(!isset($sessionofuser)){
 
 
 	<body translate="no" style="background-color: rgb(239, 241, 247);">
-		<!-- Modal -->
-<div class="modal fade"  id="form-pacientes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+		<!-- Modal Ingresar-->
+<div class="modal fade"  id="form-pacientes-ingresar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
   <div class="modal-dialog " role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -37,7 +37,7 @@ if(!isset($sessionofuser)){
       </div>
       <div class="modal-body">
 			<form  method="post" style="height:10%;"  id="formapacientes">
-
+             
 			<div class="form-group ">
 				<label for="exampleInputPassword1">Nombres</label>
 				<input type="text" name="nom" class="form-control" id="medicamento" placeholder="Nombres" required autofocus>
@@ -65,12 +65,12 @@ if(!isset($sessionofuser)){
 					<div class="form-row">
 						<div class="col-md-6 mb-4">
 						<label for="validationDefault01">Sexo</label>
-						<input type="text" name="sexo" class="form-control" id="validationDefault0s" placeholder="First name" value="Mark" required>
+						<input type="text" name="sexo" class="form-control" id="validationDefault0s" placeholder="First name" value="M" required>
 						<small id="validationDefault01"  class="form-text text-muted">Solo pudes introducir un caracter.</small>
 						</div>
 						<div class="col-md-6 mb-4">
 						<label for="validationDefault02">Edad</label>
-						<input type="text" name="edad" class="form-control validcontrol" id="validationDefault02" placeholder="Edad" required>
+						<input type="text" name="edad" class="form-control validcontrol" id="validationDefault02" placeholder="0" required>
 						</div>
 					     
 					</div>
@@ -95,6 +95,79 @@ if(!isset($sessionofuser)){
     </div>
   </div>
 </div>
+
+	<!-- Modal Actualizar-->
+<div class="modal fade"  id="form-pacientes-actualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modifcar Pacientes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+			<form  method="post" style="height:10%;"  id="formapacientes-actu">
+			<input name="idpaci" type="hidden" class="form-control" id="idpaci"  required autofocus>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1">Nombres</label>
+				<input type="text" name="nom" class="form-control" id="nombre-act"  required autofocus>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Apellidos</label>
+				<input type="text" name="ape" class="form-control" id="apelli-act"  required autofocus>
+			</div>
+			<div class="form-group">
+
+				<label for="exampleInputPassword1">Telefono</label>
+				<input type="text" name="tel" class="form-control" id="tel-act"  required autofocus>
+			</div>
+			<div class="form-group">
+
+			<label for="validationDefault01">Fecha de nacimiento</label>
+			<input type="date" name="fech" class="form-control" id="fechnac-act"  required>
+			</div>
+
+			<div class="form-group">
+			<label for="email">Correo electronico</label>
+			<input class="form-control" type="email" name="corr" id="corr-act" aria-describedby="emailHelp" required>
+			<small id="emailHelp"  class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+					<div class="form-row">
+						<div class="col-md-6 mb-4">
+						<label for="validationDefault01">Sexo</label>
+						<input type="text" name="sexo" id="sex-act" class="form-control"   value="Mark" required>
+						<small id="validationDefault01"  class="form-text text-muted">Solo pudes introducir un caracter.</small>
+						</div>
+						<div class="col-md-6 mb-4">
+						<label for="validationDefault02">Edad</label>
+						<input type="text" name="edad" id="edad-act" class="form-control validcontrol"  required>
+						</div>
+					     
+					</div>
+
+				<div class="mb-3">
+				<label for="validationTextarea">Direccion</label>
+				<textarea class="form-control is-invalid" name="direc" rows="5" id="direc-act"  required></textarea>
+				<div class="invalid-feedback">
+				Please enter a message in the textarea.
+				</div>
+               </div>
+			<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button type="button" value="actu" name="actu" class="btn btn-warning" onclick="
+			  datos=['entidades/paciente.php','#formapacientes-actu','entidades/mostardatos.php','#tabladatospaciente'];
+			  actualilzar(datos)">Actualizar</button>
+			</div>
+			</div>
+			
+			</form>
+      </div>
+    </div>
+  </div>
+</div>
+
 		<div class="page-wrapper chiller-theme toggled">
 			<a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
 			  <i class="fas fa-bars"></i>
@@ -144,7 +217,7 @@ if(!isset($sessionofuser)){
 					</li>
 					<li class="sidebar-dropdown">
 					  <a href="tabla_pacientes.php">
-						<i class="fas fa-user-injured"></i>
+						<i class="fas fa-user-injured align-rigth"></i>
 						<span>Pacientes</span>
 						<span class="badge badge-pill badge-warning">New</span>
 					  </a>
@@ -288,7 +361,7 @@ if(!isset($sessionofuser)){
 				  <i class="fa fa-envelope"></i>
 				  <span class="badge badge-pill badge-success notification">7</span>
 				</a>
-				<a href="#">
+				<a href="datos_medicos.php">
 				  <i class="fa fa-cog"></i>
 				  <span class="badge-sonar"></span>
 				</a>
@@ -333,7 +406,7 @@ if(!isset($sessionofuser)){
                                         <div class="card-header">
                                             Pacientes
 											<span style="margin-left:80%;">
-											<a href="" class="btn btn-success btn-sm" role="button" aria-pressed="true" data-toggle="modal" data-target="#form-pacientes">Nuevo</a>
+											<a href="" class="btn btn-success btn-sm" role="button" aria-pressed="true" data-toggle="modal" data-target="#form-pacientes-ingresar">Nuevo</a>
 						                   </span>
                                         </div>
                                         <div id="tabladatospaciente" class="card-body" style="justify-content: flex-end;">
