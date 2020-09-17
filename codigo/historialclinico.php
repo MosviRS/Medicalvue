@@ -50,6 +50,14 @@ if(!isset($sessionofuser)){
 							<input type="text" name="consumo 
 							drogas" placeholder="Consumo de Drogas" required autofocus>
 						</div>
+						<div class="f1" style="width: 328px;">
+							<div class="f2">
+							<label for="validationTextarea">Operaciones</label>
+				
+							</div>
+							
+							<textarea class="form-control is-invalid" name="direc" rows="5" id="validationTextarea" placeholder="Direccion" required></textarea>
+							</div>
 					</div>
 					    
                       <div class="contains">
@@ -67,15 +75,10 @@ if(!isset($sessionofuser)){
 							
 							<input type="text" name="sangre" placeholder="Sangre" required autofocus>
 						</div>
-						<div class="f1" style="width: 328px;">
-							<div class="f2">
-								<label for="contrasena" >Operaciones</label>
-							</div>
-							
-							<input type="text" name="contrasena" placeholder="Operaciones" required>
-							</div>
+						
 							
 						</div>
+						
 						<div class="contains">
 							<div class="f1">
 										<div class="f2">

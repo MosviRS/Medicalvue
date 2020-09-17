@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/codigo/DB.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/medifast/Medicalvue/codigo\DB.php';
 
 class medicos extends DB{
 public $id;
