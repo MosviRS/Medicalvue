@@ -1,6 +1,6 @@
 <?php
 include_once '../conn.php';
- include_once $_SERVER['DOCUMENT_ROOT'].'/codigo/entidades/SQL.php';
+ include_once $_SERVER['DOCUMENT_ROOT'].'/medifast/Medicalvue/codigo/entidades/SQL.php';
 
  $conn = new conn();
  $con=$conn->conectar();

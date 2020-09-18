@@ -1,7 +1,7 @@
 
 <?php
 include_once 'medico.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/codigo/entidades/datos_medics.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/medifast/Medicalvue/codigo/entidades/datos_medics.php';
 
 class datosmedicos extends medicos{
 

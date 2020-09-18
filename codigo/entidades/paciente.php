@@ -1,6 +1,6 @@
 <?php
 include_once 'medico.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/codigo/entidades/paciente.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/medifast/Medicalvue/codigo/entidades/paciente.php';
 
 class paciente extends medicos{
     

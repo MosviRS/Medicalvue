@@ -38,7 +38,7 @@
                                             <div class="dropdown-menu  bg-dark" >
                                             <a class="dropdown-item text-light" onclick="Eliminar('.$value['id_paciente'].','.$emin[0].','.$emin[1].','.$emin[2].');"><i class="far fa-trash-alt fa-fw"></i>Eliminar</a>
                                             <a class="dropdown-item text-light" data-toggle="modal" data-target="#form-pacientes-actualizar" onclick="modificar('.$value['id_paciente'].','.$data[0].','.$data[1].');"><i class="far fa-edit fa-fw"></i></i>Modificar</a>
-                                            <a class="dropdown-item text-light" href="historialclinico.php"><i class="fas fa-file-medical-alt fa-fw""></i></i>Historial clinico</a>
+                                            <a class="dropdown-item text-light" href="historialclinico.php?id='.$value['id_paciente'].'"><i class="fas fa-file-medical-alt fa-fw""></i></i>Historial clinico</a>
                                             </div>
                                            
                                             </div>
