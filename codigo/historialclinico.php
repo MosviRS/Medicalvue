@@ -31,8 +31,13 @@ if(!isset($sessionofuser)){
 		<!--Contenedor-->
 		 
 		<div id="general">
-			
-				<form method="POST"  action="verif_register.php" id="formregistro" >
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<strong>Hola <?php echo $_SESSION['nombres'] ?></strong> En esta seccion podras agregar el historial clinico de tus pacientes, esto les dara una mejor experiencia.
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST"   id="formrhistorial" >
 					<h2 id="titulo" >Historial Clinico</h2>
 				  <div class="froms">
                        <div class="contains">
@@ -50,6 +55,13 @@ if(!isset($sessionofuser)){
 							<input type="text" name="consumo 
 							drogas" placeholder="Consumo de Drogas" required autofocus>
 						</div>
+						<div class="f1" style="width: 328px;">
+							<div class="f2">
+								<label for="contrasena" >Operaciones</label>
+							</div>
+							
+							 <textarea class="form-control is-invalid" name="operaciones" rows="5" id="validationTextarea" placeholder="Operaciones" required></textarea>
+							</div>
 					</div>
 					    
                       <div class="contains">
@@ -67,13 +79,7 @@ if(!isset($sessionofuser)){
 							
 							<input type="text" name="sangre" placeholder="Sangre" required autofocus>
 						</div>
-						<div class="f1" style="width: 328px;">
-							<div class="f2">
-								<label for="contrasena" >Operaciones</label>
-							</div>
-							
-							<input type="text" name="contrasena" placeholder="Operaciones" required>
-							</div>
+						
 							
 						</div>
 						<div class="contains">
@@ -108,5 +114,12 @@ if(!isset($sessionofuser)){
 		<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 		<script src = "librerias/sweetalert.min.js"></script> 
 		<script src="JS/sinitize.js" type="text/javascript"></script>
+		<script>
+		$( document ).ready(function() {
+			let id=<?php echo $_GET['id'] ?>	
+						
+		    Sethistorial(id,"entidadesmodificar/mostarhistorial.php","#formrhistorial");
+		});
+		</script>
 	</body>
 </html>

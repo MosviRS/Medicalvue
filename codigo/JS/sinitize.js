@@ -105,12 +105,14 @@ function modificar(id,scriptt,tabla){
       var auxDatajson = [];
       var i=0;
       var textareas;
+      
       datos = jQuery.parseJSON(r);
       
         datos.forEach((e)=>{
         
           for(var p in e){
             auxDatajson.push(e[p]);
+           
           }
         }
       );
@@ -160,6 +162,40 @@ function actualilzar(datos){
      alert("Hubo un error: " + textStatus);
  });
  }
+ function Sethistorial(id,scriptt,tabla){
+
+  var request=$.ajax({
+     type:"POST",
+     data:"id="+id,
+     url:scriptt,
+     datatype: 'json',
+     success:function(r){
+      var auxDatajson = [];
+      var i=0;
+      var textareas;
+      datos = jQuery.parseJSON(r);
+      console.log(datos);
+
+      datos.forEach((e)=>{
+            for(var p in e){
+                auxDatajson.push(e[p]);
+              }
+            }
+        );
+        $(tabla).find('input').each(function(){
+          $(this).val(auxDatajson[i]);
+           
+            i=i+1;
+        });
+        if($(tabla).find('textarea').length >0){
+          $(tabla).find('textarea').val(auxDatajson[auxDatajson.length-1]);
+        }
+      
+ 
+     }
+  })
+
+}
  
 
 
