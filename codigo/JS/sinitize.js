@@ -179,12 +179,13 @@ function actualilzar(datos){
       datos.forEach((e)=>{
             for(var p in e){
                 auxDatajson.push(e[p]);
+                
               }
             }
         );
         $(tabla).find('input').each(function(){
           $(this).val(auxDatajson[i]);
-           
+          console.log(auxDatajson[i]);
             i=i+1;
         });
         if($(tabla).find('textarea').length >0){
@@ -202,7 +203,6 @@ function actualilzar(datos){
 
 // Sanitiza los input ->Solo permite caracteres
 $(function(){
-
     $('.validcontrol').keypress(function(e) {
       if(isNaN(this.value + String.fromCharCode(e.charCode))) 
        return false;

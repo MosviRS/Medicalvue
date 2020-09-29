@@ -41,6 +41,9 @@ if(!isset($sessionofuser)){
 					<h2 id="titulo" >Historial Clinico</h2>
 				  <div class="froms">
                        <div class="contains">
+					
+						<input type="hidden" name="idpaciente" placeholder="" required autofocus>
+					    
 					   <div class="f1">
 							<div class ="f2">
 								<label for="name">Enfermedad Cronica</label>
@@ -91,7 +94,7 @@ if(!isset($sessionofuser)){
 									</div>
 									<div class="f1">
 										<div class="f2">
-										 <a href='datos_medicos.php' colspan="1" type="button"  id="button2" >Cancelar</a>
+										 <a href='tabla_pacientes.php' colspan="1" type="button"  id="button2" >Cancelar</a>
 										</div>	
 								
 									</div>

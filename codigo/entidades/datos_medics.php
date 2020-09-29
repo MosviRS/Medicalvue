@@ -13,7 +13,7 @@ $telefono=(empty($_POST["Phone"])) ? NULL : $_POST["Phone"];
 
 session_start();
   require_once 'SQL.php';
-  require_once $_SERVER['DOCUMENT_ROOT'].'/codigo/conn.php';
+  require_once $_SERVER['DOCUMENT_ROOT'].'/medifast/Medicalvue/codigo/conn.php';
   $conn = new conn();
   $con=$conn->conectar();
   echo $_SESSION['name'];

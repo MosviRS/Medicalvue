@@ -1,10 +1,17 @@
 <?php
 
-include_once 'verif_login.php';
 $sessionofuser =(empty($_SESSION['name'])) ? NULL : $_SESSION['name'];
-if(!isset($sessionofuser)){
+if(!isset($sessionofuser)){	
+    if (isset($_SESSION['start']) && (time() - $_SESSION['start'] > 1800)) {
+		// last request was more than 30 minutes ago
+		session_unset();     // unset $_SESSION variable for the run-time 
+		session_destroy();   // destroy session data in storage
+		header("location:loginmedicos.php");
+	}else{
+	   session_start();
+	   $sessionofuser =(empty($_SESSION['name'])) ? NULL : $_SESSION['name'];
+	}
 	//session_start();
-    header("location:loginmedicos.php");
 }
 ?>
 <!DOCTYPE html>
@@ -253,10 +260,10 @@ if(!isset($sessionofuser)){
 
                   <div id="general">
                     
-                        <form action="entidades/datos_medics.php"  method="post" action="create-account.php" method="POST" >
+                        <form action="entidades/datos_medics.php"  method="post" action="create-account.php" method="POST" id="formdatos_medicos" >
                             <h2 id="titulo" >Mis Datos</h2>
                           <div class="froms">
-        
+						     <input type="hidden" name="id">
                                <div class="f1">
                                     <div class ="f2">
                                         <label for="name">Nombre</label>
@@ -321,5 +328,13 @@ if(!isset($sessionofuser)){
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script src="https://kit.fontawesome.com/7edcc08e48.js" crossorigin="anonymous"></script>
 		<script src="JS/menuslide.js" type="text/javascript"></script>
+		<script src="JS/sinitize.js" type="text/javascript"></script>
+		<script>
+		$( document ).ready(function() {
+			let id=<?php echo $_SESSION['id'];?>;	
+						
+		    Sethistorial(id,"entidadesmodificar/mostardatos_medicos.php","#formdatos_medicos");
+		});
+		</script>
 	</body>
 </html>

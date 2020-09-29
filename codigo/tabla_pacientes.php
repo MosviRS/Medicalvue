@@ -1,9 +1,19 @@
 <?php
 
-session_start();
-$sessionofuser =$_SESSION['name'];
-if(!isset($sessionofuser)){
-  header("location:loginmedicos.php");
+
+
+$sessionofuser =(empty($_SESSION['name'])) ? NULL : $_SESSION['name'];
+if(!isset($sessionofuser)){	
+    if (isset($_SESSION['start']) && (time() - $_SESSION['start'] > 1800)) {
+		// last request was more than 30 minutes ago
+		session_unset();     // unset $_SESSION variable for the run-time 
+		session_destroy();   // destroy session data in storage
+		header("location:loginmedicos.php");
+	}else{
+	   session_start();
+	   $sessionofuser =(empty($_SESSION['name'])) ? NULL : $_SESSION['name'];
+	}
+	//session_start();
 }
 
 
@@ -357,7 +367,7 @@ if(!isset($sessionofuser)){
 				  <i class="fa fa-bell"></i>
 				  <span class="badge badge-pill badge-warning notification">3</span>
 				</a>
-				<a href="#">
+				<a href="https://outlook.live.com/mail/0/inbox" target="_blank">
 				  <i class="fa fa-envelope"></i>
 				  <span class="badge badge-pill badge-success notification">7</span>
 				</a>
@@ -453,11 +463,7 @@ if(!isset($sessionofuser)){
 									$( document ).ready(function() {
 										
 									       mostar('entidades/mostardatos.php','#tabladatospaciente');
-                                           });
-									
-								
-							  
-							
+                                    });
 		                        </script>
 	</body>
 </html>
