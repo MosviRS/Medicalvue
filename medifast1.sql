@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2020 a las 21:11:00
+-- Tiempo de generación: 07-10-2020 a las 02:45:36
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.8
 
@@ -33,6 +33,13 @@ CREATE TABLE `citas` (
   `observaciones` text COLLATE utf8_spanish_ci DEFAULT NULL,
   `fech_cita` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `citas`
+--
+
+INSERT INTO `citas` (`id_cita`, `fk_paciente`, `observaciones`, `fech_cita`) VALUES
+(2, 6, 'hoalkddd', '2020-09-19');
 
 -- --------------------------------------------------------
 
@@ -67,7 +74,7 @@ CREATE TABLE `datos_medics` (
 --
 
 INSERT INTO `datos_medics` (`fk_medico`, `fecha_naci`, `especialidad`, `telefono`) VALUES
-(1, '2020-09-17', 'cardiologia', '+527225637444');
+(1, '2020-10-08', 'cardiologia', '+527225637444');
 
 -- --------------------------------------------------------
 
@@ -90,7 +97,6 @@ CREATE TABLE `datos_paciente` (
 --
 
 CREATE TABLE `historial` (
-  `id_histo` int(11) NOT NULL,
   `fk_paciente` int(11) NOT NULL,
   `enfermedad` text COLLATE utf8_spanish_ci DEFAULT NULL,
   `drogas` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -98,6 +104,13 @@ CREATE TABLE `historial` (
   `tipo_sangre` char(4) COLLATE utf8_spanish_ci DEFAULT NULL,
   `operaciones` text COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `historial`
+--
+
+INSERT INTO `historial` (`fk_paciente`, `enfermedad`, `drogas`, `alergias`, `tipo_sangre`, `operaciones`) VALUES
+(2, 'diabets', 'michas', 'todas', 'apo', 'aborto');
 
 -- --------------------------------------------------------
 
@@ -119,8 +132,7 @@ CREATE TABLE `medicamentos` (
 --
 
 INSERT INTO `medicamentos` (`id_medicamento`, `fk_medico`, `nombre`, `forma_fa`, `presentacion`, `concentracion`) VALUES
-(1, 1, 'tolds', '200mg', '340', 'tabletas'),
-(2, 1, 'die', 'vff', 'ccf', 'vfv');
+(2, 1, 'die', '100mhg', 'ccf', 'vfv');
 
 -- --------------------------------------------------------
 
@@ -146,7 +158,8 @@ CREATE TABLE `pacientes` (
 --
 
 INSERT INTO `pacientes` (`id_paciente`, `fk_medico`, `nombres`, `apellidos`, `telefono`, `direccion`, `fech_nac`, `sexo`, `email`, `edad`) VALUES
-(2, 1, 'silvia', 'seded', '+527225637444', 'SAN MIGUEL PRO M16 LOTE 22\r\nEX RANCHO SANDIMAS', '2020-09-14', 'M', 'mosvi_randy@hotmail.com', 23);
+(2, 1, 'silvia', 'seded', '+527225637444', 'SAN MIGUEL PRO M16 LOTE 22\r\nEX RANCHO SANDIMAS', '2020-09-14', 'M', 'mosvi_randy@hotmail.com', 23),
+(6, 1, 'vvb', 'buu', 'bhnh', 'jbjobipipnk', '2020-09-09', 'M', 'njmj', 88);
 
 -- --------------------------------------------------------
 
@@ -179,7 +192,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nombres`, `apellidos`, `email`, `passwrd`) VALUES
-(1, 'Diego Omalli', 'Barajas', 'mosvi_randy@hotmail.com', '$2y$10$vmV6vCcqmxiOM6aQnAnkXuqnF1cgJKdFLnkxqSvlN5Dm0mCDL7MTa');
+(1, 'Diego dios', 'Barajas', 'mosvi_randy@hotmail.com', '$2y$10$vmV6vCcqmxiOM6aQnAnkXuqnF1cgJKdFLnkxqSvlN5Dm0mCDL7MTa');
 
 --
 -- Índices para tablas volcadas
@@ -217,8 +230,7 @@ ALTER TABLE `datos_paciente`
 -- Indices de la tabla `historial`
 --
 ALTER TABLE `historial`
-  ADD PRIMARY KEY (`id_histo`),
-  ADD KEY `fk_pacihisto` (`fk_paciente`);
+  ADD PRIMARY KEY (`fk_paciente`);
 
 --
 -- Indices de la tabla `medicamentos`
@@ -255,19 +267,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `id_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `consultas`
 --
 ALTER TABLE `consultas`
   MODIFY `id_consulta` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `historial`
---
-ALTER TABLE `historial`
-  MODIFY `id_histo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `medicamentos`
@@ -279,13 +285,13 @@ ALTER TABLE `medicamentos`
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
