@@ -216,7 +216,7 @@ if(!isset($sessionofuser)){
 					  </div>
 					</li>
 					<li class="sidebar-dropdown">
-					  <a href="tabla_citas.php">
+					  <a href="nuevoscasos.php">
 						<i class="fas fa-calendar-week"></i>
 						<span>Citas</span>
 					  </a>

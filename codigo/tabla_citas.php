@@ -193,7 +193,7 @@ if(!isset($sessionofuser)){
 					  </div>
 					</li>
 					<li class="sidebar-dropdown">
-					  <a href="#">
+					  <a href="nuevoscasos.php">
 						<i class="fas fa-stethoscope"></i>
 						<span>Nuevo caso</span>
 						<span class="badge badge-pill badge-danger">3</span>

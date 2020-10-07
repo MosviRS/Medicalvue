@@ -102,7 +102,7 @@ if(!isset($sessionofuser)){
 					  </div>
 					</li>
 					<li class="sidebar-dropdown">
-					  <a href="nuevoscasos.php">
+					  <a href="#">
 						<i class="fas fa-stethoscope"></i>
 						<span>Nuevo caso</span>
 						<span class="badge badge-pill badge-danger">3</span>
@@ -249,21 +249,21 @@ if(!isset($sessionofuser)){
 					</div>
 				</header> 
 			  <div class="container-fluid">
-				<h2>Antes de comenzar</h2>
+				<!--<h2>Nuevo Caso</h2>-->
 				<hr>
 				<div class="row">
 				  <div class="form-group col-md-12">
-					<p>Ayudanos introduciendo los siguientes datos para una mejor experiencia.</p>
-					<!-- <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
+					<!--<p>Aqui van los formularios de nuevos casos.</p>
+					 <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
 						Github</a>, it contains more themes and background image option</p> -->
                   </div>
 
                   <div id="general">
                     
-                        <form action="entidades/datos_medics.php"  method="post" action="create-account.php" method="POST" id="formdatos_medicos" >
-                            <h2 id="titulo" >Mis Datos</h2>
+                        <form action=""  method="post"  method="POST" id="formdatos_casos" >
+                            <h2 id="titulo" >Nuevo Caso</h2>
                           <div class="froms">
-						     <input type="hidden" name="id">
+						    <!-- <input type="hidden" name="id">
                                <div class="f1">
                                     <div class ="f2">
                                         <label for="name">Nombre</label>
@@ -310,7 +310,7 @@ if(!isset($sessionofuser)){
                                
                                     </div>
                         
-                            <button colspan="1" type="submit"  id="boton1">Guardar</button>
+                            <button colspan="1" type="submit"  id="boton1">Guardar</button> -->
                               
                         
                             
@@ -329,12 +329,7 @@ if(!isset($sessionofuser)){
 		<script src="https://kit.fontawesome.com/7edcc08e48.js" crossorigin="anonymous"></script>
 		<script src="JS/menuslide.js" type="text/javascript"></script>
 		<script src="JS/sinitize.js" type="text/javascript"></script>
-		<script>
-		$( document ).ready(function() {
-			let id=<?php echo $_SESSION['id'];?>;	
-			console.log(id);			
-		    Sethistorial(id,"entidadesmodificar/mostardatos_medicos.php","#formdatos_medicos");
-		});
+	
 		</script>
 	</body>
 </html>
