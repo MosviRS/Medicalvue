@@ -254,8 +254,8 @@ if(!isset($sessionofuser)){
 				<div class="row">
 				  <div class="form-group col-md-12">
 					<p>Ayudanos introduciendo los siguientes datos para una mejor experiencia.</p>
-					<p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
-						Github</a>, it contains more themes and background image option</p>
+					<!-- <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
+						Github</a>, it contains more themes and background image option</p> -->
                   </div>
 
                   <div id="general">
@@ -332,7 +332,7 @@ if(!isset($sessionofuser)){
 		<script>
 		$( document ).ready(function() {
 			let id=<?php echo $_SESSION['id'];?>;	
-						
+			console.log(id);			
 		    Sethistorial(id,"entidadesmodificar/mostardatos_medicos.php","#formdatos_medicos");
 		});
 		</script>

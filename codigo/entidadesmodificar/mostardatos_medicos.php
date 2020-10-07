@@ -10,10 +10,14 @@
 
         $id=(empty($_POST["id"])) ? NULL : $_POST["id"];
 
+        $que="SELECT id,nombres,apellidos FROM users  WHERE id=".$id.";";
+        $array1=$objsql->vizualizar($con,$que);
+        $que="SELECT b.fecha_naci,b.especialidad,b.telefono FROM datos_medics b WHERE b.fk_medico=".$id.";";
+        $array2=$objsql->vizualizar($con,$que);
+        $que="SELECT email FROM users  WHERE id=".$id.";";
+        $array3=$objsql->vizualizar($con,$que);
+        $array4=array_merge($array1, $array2);
+        $array5=array_merge($array4, $array3);
         
-        $que="SELECT b.fk_medico,a.nombres,a.apellidos,b.fecha_naci,b.especialidad,b.telefono,a.email FROM users a,datos_medics b WHERE a.id=b.fk_medico and b.fk_medico=".$id.";";
-
-        $array=$objsql->vizualizar($con,$que);
-        
-        echo json_encode($array);
+        echo json_encode($array5);
  ?>
