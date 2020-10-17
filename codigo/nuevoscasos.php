@@ -107,7 +107,7 @@ if(!isset($sessionofuser)){
 						<span>Nuevo caso</span>
 						<span class="badge badge-pill badge-danger">3</span>
 					  </a>
-					  <div class="sidebar-submenu">
+					 <!-- <div class="sidebar-submenu">
 						<ul>
 						  <li>
 							<a href="#">Productos
@@ -121,7 +121,7 @@ if(!isset($sessionofuser)){
 							<a href="#">Credit cart</a>
 						  </li>
 						</ul>
-					  </div>
+					  </div> -->
 					</li>
 					<li class="sidebar-dropdown">
 					  <a href="tabla_citas.php">
@@ -259,80 +259,117 @@ if(!isset($sessionofuser)){
                   </div>
 
                   <div id="general">
-				  <ul class="nav nav-tabs" id="myTab" role="tablist">
-								<li class="nav-item">
-									<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Nuevo Caso</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Preinscripcion</a>
-								</li>
-								
-				  </ul>
-                       
-						 
-						  <div class="tab-content" id="myTabContent">
-								<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-								<form action=""  method="post"  method="POST" id="formdatos_casos" >
-									<h2 id="titulo" >Nuevo Caso</h2>
-									<div class="froms">
-										<input type="hidden" name="id">
-														<div class="f1">
-																<div class ="f2">
-																	<label for="name">Nombre</label>
-																</div>
-																<input type="text" name="name" required autofocus>
-															</div>
-															<div class="f1">
-																<div  class ="f2">
-																	<label for="surname">Apellidos</label>
-																</div>
-																
-																<input type="text" name="surname" required autofocus>
-															</div>
-															<div class="f1">
-																<div class="f2" >
-																	<label for="born">Fecha de nacimiento</label>
-																</div>
-																
-																<input type="date" name="born" required autofocus>
-															</div>
-															<div class="f1">
-																<div class="f2" >
-																	<label for="especiality">Especialidad</label>
-																</div>
-															
-																<input type="text" name="especiality" required autofocus> 
-															</div>
-															<div class="f1">
-																<div class="f2">
-																	<label for="Phone">Telefono</label>
-																</div>
-																
-																<input type="text" name="Phone" required autofocus>
-															</div>
-															<div class="f1">
-																<div class="f2">
-																	<label for="email">Correo electronico</label>
-																	
-																</div>
-																
-																<input type="email" name="email" aria-describedby="emailHelp" required>
-																<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-															</div>
-														
-																</div>
-													
-														<button colspan="1" type="submit"  id="boton1">Guardar</button>
-								</form>
+                    
+                        <form action=""  method="post"  method="POST" id="formdatos_casos" >
+                            <h2 id="titulo" >Nuevo Caso</h2>
+                          <div class="form-group">
+						  <input type="hidden" name="id">
+
+						<div class="form-row">
+							<div class="col-md-4 mb-3">
+							<label for="validationDefault01">Nombre(s)</label>
+							<input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Nombre(s)" required autofocus>
 							</div>
-								<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+
+
+							<div class="col-md-4 mb-3">
+							<label for="validationDefault02">Apellidos</label>
+							<input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Apellidos" required autofocus>
+							</div>
+
+							<div class="col-md-4 mb-3">
+								<label for="born">Fecha de nacimiento</label>
+                                    <input type="date" class="form-control" id="born" placeholder="born" required autofocus>
+							</div>
+						</div>
+						
+
+						<div class="form-row">
+							<div class="col-md-3 mb-3">
+							<label for="validationDefault04">Alergias</label>
+							<input type="text" class="form-control" id="validationDefault04" placeholder="Alergias" required autofocus>
+							</div>
+							<div class="col-md-1 mb-3">
+							<label for="validationDefault05">Estatura</label>
+							<input type="text" class="form-control" id="validationDefault05" placeholder="Estatura" required autofocus>
+							</div>
+							<div class="col-md-1 mb-3">
+							<label for="validationDefault05">Peso</label>
+							<input type="text" class="form-control" id="validationDefault05" placeholder="Peso" required autofocus>
+							</div>	
+							<div class="col-md-1 mb-3">
+							<label for="validationDefault04">Temperatura</label>
+							<input type="text" class="form-control" id="validationDefault04" placeholder="Temperatura" required autofocus>
+							</div>		
+						</div>	
+
+						<div class="form-group">
+						<div class="form-group">
+								<label for="TextAreaEnfermedad">Enfermedad/Padeciemintos que presenta</label>
+								<textarea class="form-control" id="TextAreaEnfermedad" rows="2"></textarea>
+						</div>
+							<div class="form-group">
+								<label for="TextAreaReceta">Receta Médica</label>
+								<textarea class="form-control" id="TextAreaReceta" rows="4"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="TextAreaIndicaciones">Indicaciones Médicas</label>
+								<textarea class="form-control" id="TextAreaIndicaciones" rows="3"></textarea>
+							</div>
+						</div>
+						</div>
+
+<!--
+                               <div class="f1">
+                                    <div class ="f2">
+                                        <label for="name">Nombre</label>
+                                    </div>
+                                    <input type="text" name="name" required autofocus>
+                                </div>
+                                <div class="f1">
+                                    <div  class ="f2">
+                                        <label for="surname">Apellidos</label>
+                                    </div>
+                                    
+                                    <input type="text" name="surname" required autofocus>
+                                </div>
 								
-                          </div>
-						    
-                              
-                        
-                            
-                        
+								<div class="f1">
+                                    <div class="f2" >
+                                        <label for="born">Fecha de nacimiento</label>
+                                    </div>
+                                    
+                                    <input type="date" name="born" required autofocus>
+                                </div>
+							   
+								<div class="f1">
+                                    <div class="f2" >
+                                        <label for="especiality">Especialidad</label>
+                                    </div>
+                                
+                                    <input type="text" name="especiality" required autofocus> 
+                                </div>
+                                <div class="f1">
+                                    <div class="f2">
+                                        <label for="Phone">Telefono</label>
+                                    </div>
+                                    
+                                    <input type="text" name="Phone" required autofocus>
+                                </div>
+                                <div class="f1">
+                                    <div class="f2">
+										<label for="email">Correo electronico</label>
+										
+                                    </div> 
+                                    
+									<input type="email" name="email" aria-describedby="emailHelp" required>
+									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                               
+                                    </div>
+-->
+							<button colspan="1" type="submit"  id="boton1">Guardar/Generar Receta</button> 
+                        </form>
                     
                 </div>
 				 
