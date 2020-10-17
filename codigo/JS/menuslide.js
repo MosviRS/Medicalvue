@@ -26,3 +26,8 @@ $("#close-sidebar").click(function() {
 $("#show-sidebar").click(function() {
   $(".page-wrapper").addClass("toggled");
 });
+
+$('#boton1').on('click', function (e) {
+  $('#myTab li:last-child a').tab('show') 
+  
+})

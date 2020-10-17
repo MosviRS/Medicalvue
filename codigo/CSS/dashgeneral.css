@@ -650,6 +650,14 @@ form h2
 	margin-bottom: 20px;
 
 }
+h2{
+	color: #22E3FF;
+	text-align: left;
+	margin-left: 20px;
+	font-size: 30px;
+	margin-bottom: 20px;
+
+}
 #titulo{
 	position: relative;
 	top:30px;
@@ -720,6 +728,19 @@ button
 {
 	cursor: pointer;
 	background-color: #1a8292;
+}
+#boton2{
+	margin-right: 100%;
+	background:#13AB53;
+	color: #FFF;
+	padding:10px;
+	border-radius: 5px;
+	position: relative;
+	top: 10px;
+}
+#boton2:hover{
+	cursor: pointer;
+	background-color: #08833C;
 }
 .tress{
 	display: relative;
