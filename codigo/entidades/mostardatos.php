@@ -7,8 +7,14 @@
    $conn = new conn();
    $con=$conn->conectar();
    session_start();
-   
-   $que="SELECT id_paciente,nombres,apellidos,telefono,direccion,sexo,email,edad FROM pacientes where fk_medico=".$_SESSION['id'].";";
+   $name=(empty($_POST["name"])) ? NULL : $_POST["name"];
+   if(is_null($name)){
+        $que="SELECT id_paciente,nombres,apellidos,telefono,direccion,sexo,email,edad FROM pacientes where fk_medico=".$_SESSION['id'].";";
+   }else{
+    
+        $que="SELECT id_paciente,nombres,apellidos,telefono,direccion,sexo,email,edad FROM pacientes where fk_medico=".$_SESSION['id']." and nombres LIKE '".$name."%' or apellidos LIKE '".$name."%' or email LIKE '".$name."%' or telefono LIKE '".$name."%' ;";
+   }
+  
    $objsql= new metodosSQL();
    
    $data = array("'entidadesmodificar/pacientesUpdate.php'", "'#formapacientes-actu'");

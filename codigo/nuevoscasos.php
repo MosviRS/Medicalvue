@@ -259,62 +259,80 @@ if(!isset($sessionofuser)){
                   </div>
 
                   <div id="general">
-                    
-                        <form action=""  method="post"  method="POST" id="formdatos_casos" >
-                            <h2 id="titulo" >Nuevo Caso</h2>
-                          <div class="froms">
-						    <!-- <input type="hidden" name="id">
-                               <div class="f1">
-                                    <div class ="f2">
-                                        <label for="name">Nombre</label>
-                                    </div>
-                                    <input type="text" name="name" required autofocus>
-                                </div>
-                                <div class="f1">
-                                    <div  class ="f2">
-                                        <label for="surname">Apellidos</label>
-                                    </div>
-                                    
-                                    <input type="text" name="surname" required autofocus>
-                                </div>
-                                <div class="f1">
-                                    <div class="f2" >
-                                        <label for="born">Fecha de nacimiento</label>
-                                    </div>
-                                    
-                                    <input type="date" name="born" required autofocus>
-                                </div>
-                                <div class="f1">
-                                    <div class="f2" >
-                                        <label for="especiality">Especialidad</label>
-                                    </div>
-                                
-                                    <input type="text" name="especiality" required autofocus> 
-                                </div>
-                                <div class="f1">
-                                    <div class="f2">
-                                        <label for="Phone">Telefono</label>
-                                    </div>
-                                    
-                                    <input type="text" name="Phone" required autofocus>
-                                </div>
-                                <div class="f1">
-                                    <div class="f2">
-										<label for="email">Correo electronico</label>
-										
-                                    </div>
-                                    
-									<input type="email" name="email" aria-describedby="emailHelp" required>
-									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                </div>
-                               
-                                    </div>
-                        
-                            <button colspan="1" type="submit"  id="boton1">Guardar</button> -->
+				  <ul class="nav nav-tabs" id="myTab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Nuevo Caso</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Preinscripcion</a>
+								</li>
+								
+				  </ul>
+                       
+						 
+						  <div class="tab-content" id="myTabContent">
+								<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+								<form action=""  method="post"  method="POST" id="formdatos_casos" >
+									<h2 id="titulo" >Nuevo Caso</h2>
+									<div class="froms">
+										<input type="hidden" name="id">
+														<div class="f1">
+																<div class ="f2">
+																	<label for="name">Nombre</label>
+																</div>
+																<input type="text" name="name" required autofocus>
+															</div>
+															<div class="f1">
+																<div  class ="f2">
+																	<label for="surname">Apellidos</label>
+																</div>
+																
+																<input type="text" name="surname" required autofocus>
+															</div>
+															<div class="f1">
+																<div class="f2" >
+																	<label for="born">Fecha de nacimiento</label>
+																</div>
+																
+																<input type="date" name="born" required autofocus>
+															</div>
+															<div class="f1">
+																<div class="f2" >
+																	<label for="especiality">Especialidad</label>
+																</div>
+															
+																<input type="text" name="especiality" required autofocus> 
+															</div>
+															<div class="f1">
+																<div class="f2">
+																	<label for="Phone">Telefono</label>
+																</div>
+																
+																<input type="text" name="Phone" required autofocus>
+															</div>
+															<div class="f1">
+																<div class="f2">
+																	<label for="email">Correo electronico</label>
+																	
+																</div>
+																
+																<input type="email" name="email" aria-describedby="emailHelp" required>
+																<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+															</div>
+														
+																</div>
+													
+														<button colspan="1" type="submit"  id="boton1">Guardar</button>
+								</form>
+							</div>
+								<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+								
+                          </div>
+						    
                               
                         
                             
-                        </form>
+                        
                     
                 </div>
 				 

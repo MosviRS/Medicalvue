@@ -9,8 +9,14 @@
    $emin = array("'entidadeseliminar/eliminarmedicam.php'","'entidades/mostardatosmedicam.php'","'#tabladatosmedicamentos'");
    $con=$conn->conectar();
    session_start();
-   
-   $que="SELECT id_medicamento,nombre,forma_fa,presentacion,concentracion FROM medicamentos where fk_medico=".$_SESSION['id'].";";
+   $name=(empty($_POST["name"])) ? NULL : $_POST["name"];
+   if(is_null($name)){
+       $que="SELECT id_medicamento,nombre,forma_fa,presentacion,concentracion FROM medicamentos where fk_medico=".$_SESSION['id'].";";
+   }else{
+    
+       $que="SELECT id_medicamento,nombre,forma_fa,presentacion,concentracion FROM medicamentos where fk_medico=".$_SESSION['id']." and nombre LIKE  '".$name."%' or  forma_fa LIKE '".$name."%' or presentacion LIKE '".$name."%' ;";
+   }
+  
    $objsql= new metodosSQL();
    
 
@@ -59,9 +65,7 @@
                                                         <th class="text-center">Accion</th>
                                                     </tr>    
                                                 </thead>
-                                                <tbody> '.$table.'
-
-         
+                                                <tbody> '.$table.' 
            
         </tbody>
 

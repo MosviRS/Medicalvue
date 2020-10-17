@@ -344,7 +344,7 @@ if(!isset($sessionofuser)){
 				<div class="search-paci">
 				  <div>
 					<div class="input-group">
-					  <input type="text" class="form-control search-menu" placeholder="Search...">
+					  <input id="buscadorMedica" type="text" class="form-control search-menu" placeholder="Search...">
 					  <div class="input-group-append">
 						<span class="input-group-text">
 						  <i class="fa fa-search" aria-hidden="true"></i>
@@ -404,6 +404,7 @@ if(!isset($sessionofuser)){
 		<script src="https://kit.fontawesome.com/7edcc08e48.js" crossorigin="anonymous"></script>
 		<script src="JS/menuslide.js" type="text/javascript"></script>
 		<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
+		<script src="JS/buscadormedi.js" type="text/javascript"></script>
 		<script src="JS/sinitize.js" type="text/javascript"></script>
 		<script type="text/javascript">
 		$( document ).ready(function() {

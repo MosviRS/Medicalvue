@@ -398,7 +398,7 @@ if(!isset($sessionofuser)){
                 
 				  <div class="">
 					<div class="input-group">
-					  <input type="text" class="form-control" placeholder="Search...">
+					  <input id="buscadorpaci" type="text" class="form-control" placeholder="Search...">
 					  <div class="input-group-append">
 						<span class="input-group-text">
 						  <i class="fa fa-search" aria-hidden="true"></i>
@@ -458,6 +458,7 @@ if(!isset($sessionofuser)){
 		<script src="JS/menuslide.js" type="text/javascript"></script>
 		<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 		<script src="JS/sinitize.js" type="text/javascript"></script>
+		<script src="JS/buscador.js" type="text/javascript"></script>
 		<script type="text/javascript">
 								
 									$( document ).ready(function() {

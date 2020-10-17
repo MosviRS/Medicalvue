@@ -1,16 +1,23 @@
 <?php
 
-
    include_once '../conn.php';
    include_once 'SQL.php';
    include_once 'medico.php';
    $conn = new conn();
    $con=$conn->conectar();
    session_start();
+   $name=(empty($_POST["name"])) ? NULL : $_POST["name"];
    
-   $que="SELECT citas.id_cita, pacientes.nombres,pacientes.apellidos, citas.observaciones, citas.fech_cita FROM 
-   (datos_medics INNER JOIN pacientes ON datos_medics.fk_medico = pacientes.fk_medico) 
-   INNER JOIN citas ON pacientes.id_paciente = citas.fk_paciente WHERE pacientes.fk_medico=".$_SESSION['id'].";";
+ 
+   if(is_null($name)){
+        $que="SELECT citas.id_cita, pacientes.nombres,pacientes.apellidos, citas.observaciones, citas.fech_cita FROM 
+        (datos_medics INNER JOIN pacientes ON datos_medics.fk_medico = pacientes.fk_medico) 
+        INNER JOIN citas ON pacientes.id_paciente = citas.fk_paciente WHERE pacientes.fk_medico=".$_SESSION['id'].";";
+   }else{
+        $que="SELECT citas.id_cita, pacientes.nombres,pacientes.apellidos, citas.observaciones, citas.fech_cita FROM 
+        (datos_medics INNER JOIN pacientes ON datos_medics.fk_medico = pacientes.fk_medico) 
+        INNER JOIN citas ON pacientes.id_paciente = citas.fk_paciente WHERE pacientes.fk_medico=".$_SESSION['id']." and pacientes.nombres LIKE '".$name."%' or pacientes.apellidos LIKE '".$name."%';";
+   }
    $objsql= new metodosSQL();
    
    $data = array("'entidadesmodificar/citasUpdate.php'","'#formcitas-actualziar'");
@@ -63,9 +70,7 @@
                                                     </tr>    
                                                 </thead>
             <tbody>'.$table.'
-
-         
-           
+  
         </tbody>
 
     </table> ';

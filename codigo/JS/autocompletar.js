@@ -11,14 +11,14 @@ function autocompletar(){
 
         //crear la lista de sugerencias
         const divList = document.createElement('div');
-       divList.setAttribute('id', this.id + '-lista-autocompletar');
+        divList.setAttribute('id', this.id + '-lista-autocompletar');
         divList.setAttribute('class', 'lista-autocompletar-items');
         this.parentNode.appendChild(divList);
 
         // conexión a BD
-      httpRequest('entidades/datosinput.php?nombrepaci=' + tipoMascota, function(){
+        httpRequest('entidades/datosinput.php?nombrepaci=' + tipoMascota, function(){
           
-          const arreglo = JSON.parse(this.responseText);
+        const arreglo = JSON.parse(this.responseText);
          // console.log(arreglo);
     
             

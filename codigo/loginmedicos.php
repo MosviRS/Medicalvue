@@ -51,7 +51,7 @@ if(isset($_SESSION['name'])){
 					</div>
 					<button colspan="1" type="submit"  id="boton1">Iniciar Sesión</button>
                       
-					<button colspan="1" type="button"  id="boton2">	<i class="fab fa-facebook-f"></i>Iniciar Sesión con Facebook</button>
+					<!--<button colspan="1" type="button"  id="boton2">	<i class="fab fa-facebook-f"></i>Iniciar Sesión con Facebook</button>-->
 					<button onclick="location.href='CreateAccount.html'" type="button" class="btn btn-link">¿Se te olvido tu crontaseña?</button>
 				<div class="regis">
 				    <b>¿No usas Medifast?<a href='CreateAccount.html' type="button" class="btn btn-link">Unete a nosotros</a></b>

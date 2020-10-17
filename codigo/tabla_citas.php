@@ -343,7 +343,7 @@ if(!isset($sessionofuser)){
                 <div class="search-paci">
 				  <div>
 					<div class="input-group">
-					  <input type="text" class="form-control search-menu" placeholder="Search...">
+					  <input id="buscadorcitas" type="text" class="form-control search-menu" placeholder="Search...">
 					  <div class="input-group-append">
 						<span class="input-group-text">
 						  <i class="fa fa-search" aria-hidden="true"></i>
@@ -415,6 +415,7 @@ if(!isset($sessionofuser)){
 		<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 		<script src="JS/sinitize.js" type="text/javascript"></script>
 		<script src="JS/autocompletar.js" type="text/javascript"></script>
+		<script src="JS/buscadorcitas.js" type="text/javascript"></script>
 		<script type="text/javascript">
 								
 								$( document ).ready(function() {
@@ -422,9 +423,6 @@ if(!isset($sessionofuser)){
 									       mostar('entidades/mostardatoscitas.php','#tabladatoscitas');
                                            });
 									
-								
-							  
-							
 		                        </script> 
 	</body>
 </html>
