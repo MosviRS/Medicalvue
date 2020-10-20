@@ -75,12 +75,12 @@ if(!isset($sessionofuser)){
 					<div class="form-row">
 						<div class="col-md-6 mb-4">
 						<label for="validationDefault01">Sexo</label>
-						<input type="text" name="sexo" class="form-control" id="validationDefault0s" placeholder="First name" value="M" required>
+						<input maxlength="1" type="text" name="sexo" class="form-control" id="validationDefault0s" placeholder="First name" value="M" required>
 						<small id="validationDefault01"  class="form-text text-muted">Solo pudes introducir un caracter.</small>
 						</div>
 						<div class="col-md-6 mb-4">
 						<label for="validationDefault02">Edad</label>
-						<input type="text" name="edad" class="form-control validcontrol" id="validationDefault02" placeholder="0" required>
+						<input type="text" name="edad" class="form-control validcontrol" id="validationDefault02" placeholder="0" onkeypress="" required>
 						</div>
 					     
 					</div>

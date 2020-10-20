@@ -26,6 +26,7 @@ if(!isset($sessionofuser)){
 		<link rel="stylesheet" href="CSS/dashgeneral.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="manifest" href="json/manifest.json">
+		<link rel="stylesheet" href="CSS/autocominputs.css">
     </head>
 
 
@@ -259,32 +260,27 @@ if(!isset($sessionofuser)){
                   </div>
 
                   <div id="general">
-				  <ul class="nav nav-tabs" id="myTab" role="tablist">
-								<li class="nav-item">
-									<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Nuevo Caso</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Preinscripcion</a>
-								</li>		
-				  </ul>
+							<ul class="nav nav-tabs" id="myTab" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Nuevo Caso</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Preinscripcion</a>
+											</li>		
+							</ul>
                        
 						  <div class="tab-content" id="myTabContent">
 								<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 								<form action=""  method="post"  method="POST" id="formdatos_casos" >
 									<h2 id="titulo" >Nuevo Caso</h2>
 									<div class="froms">
-										<input type="hidden" name="id">
+									           <input name="idpaciente" type="hidden" class="form-control" id="idpaci" placeholder="ID" required autofocus>
 										       <div class="form-row">
 													<div class="col-md-4 mb-3">
 													<label for="validationDefault01">Nombre(s)</label>
-													<input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Nombre(s)" required autofocus>
+													<input type="text" class="form-control" id="nombrepaci" placeholder="Nombre(s)" autocomplete="off" value="" required autofocus>
 													</div>
 
-
-													<div class="col-md-4 mb-3">
-													<label for="validationDefault02">Apellidos</label>
-													<input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Apellidos" required autofocus>
-													</div>
 
 													<div class="col-md-4 mb-3">
 														<label for="born">Fecha de nacimiento</label>
@@ -300,11 +296,11 @@ if(!isset($sessionofuser)){
 														</div>
 														<div class="col-md-1 mb-3">
 														<label for="validationDefault05">Estatura</label>
-														<input type="text" class="form-control" id="validationDefault05" placeholder="Estatura" required autofocus>
+														<input type="text" class="form-control" id="validationDefault06" placeholder="Estatura" onkeypress=" return autonum(event)" required autofocus>
 														</div>
 														<div class="col-md-1 mb-3">
 														<label for="validationDefault05">Peso</label>
-														<input type="text" class="form-control" id="validationDefault05" placeholder="Peso" required autofocus>
+														<input type="text" class="form-control" id="validationDefault05" placeholder="Peso"  onkeypress=" return autonum(event)" required autofocus>
 														</div>	
 														<div class="col-md-1 mb-3">
 														<label for="validationDefault04">Temperatura</label>
@@ -355,6 +351,7 @@ if(!isset($sessionofuser)){
 		<script src="https://kit.fontawesome.com/7edcc08e48.js" crossorigin="anonymous"></script>
 		<script src="JS/menuslide.js" type="text/javascript"></script>
 		<script src="JS/sinitize.js" type="text/javascript"></script>
+		<script src="JS/autocompletar.js" type="text/javascript"></script>
 	
 		</script>
 	</body>

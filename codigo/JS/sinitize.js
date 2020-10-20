@@ -212,5 +212,15 @@ $(function(){
     });
   
   });
+  function autonum(e){
+
+      if(isNaN(e.key + String.fromCharCode(e.charCode))) {
+        return false;
+      }
+      
+  }
+
+
+  
   
  

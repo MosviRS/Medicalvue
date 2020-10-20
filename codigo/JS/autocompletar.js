@@ -14,7 +14,6 @@ function autocompletar(){
         divList.setAttribute('id', this.id + '-lista-autocompletar');
         divList.setAttribute('class', 'lista-autocompletar-items');
         this.parentNode.appendChild(divList);
-
         // conexión a BD
         httpRequest('entidades/datosinput.php?nombrepaci=' + tipoMascota, function(){
           
