@@ -283,8 +283,8 @@ if(!isset($sessionofuser)){
 
 
 													<div class="col-md-4 mb-3">
-														<label for="born">Fecha de nacimiento</label>
-															<input type="date" class="form-control" id="born" placeholder="born" required autofocus>
+														<label for="born">Fecha de consulta</label>
+															<input type="date" class="form-control" id="fecha_consulta" placeholder="fecha_consulta" required autofocus>
 													</div>
 												</div>
 																		
@@ -296,7 +296,7 @@ if(!isset($sessionofuser)){
 														</div>
 														<div class="col-md-1 mb-3">
 														<label for="validationDefault05">Estatura</label>
-														<input type="text" class="form-control" id="validationDefault06" placeholder="Estatura" onkeypress=" return autonum(event)" required autofocus>
+														<input type="text" class="form-control" id="validationDefault06" placeholder="Estatura" onkeypress="" required autofocus>
 														</div>
 														<div class="col-md-1 mb-3">
 														<label for="validationDefault05">Peso</label>
@@ -352,7 +352,16 @@ if(!isset($sessionofuser)){
 		<script src="JS/menuslide.js" type="text/javascript"></script>
 		<script src="JS/sinitize.js" type="text/javascript"></script>
 		<script src="JS/autocompletar.js" type="text/javascript"></script>
-	
+	     <script>
+		    $( document ).ready(function() {
+
+			var now = new Date();
+			var day = ("0" + now.getDate()).slice(-2);
+			var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+			var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+			$("#fecha_consulta").val(today);
+			});
 		</script>
 	</body>
 </html>
