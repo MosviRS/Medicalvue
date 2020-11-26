@@ -213,8 +213,10 @@ $(function(){
   
   });
   function autonum(e){
-
-      if(isNaN(e.key + String.fromCharCode(e.charCode))) {
+    // alert(e.key)
+      if(e.key=='.'){
+        return true;
+      }else if(isNaN(e.key + String.fromCharCode(e.charCode))) {
         return false;
       }
       

@@ -292,19 +292,19 @@ if(!isset($sessionofuser)){
 													<div class="form-row">
 														<div class="col-md-3 mb-3">
 														<label for="validationDefault04">Alergias</label>
-														<input type="text" class="form-control" id="validationDefault04" placeholder="Alergias" required autofocus>
+														<input type="text" class="form-control" id="alergias" placeholder="Alergias" required autofocus>
 														</div>
 														<div class="col-md-1 mb-3">
 														<label for="validationDefault05">Estatura</label>
-														<input type="text" class="form-control" id="validationDefault06" placeholder="Estatura" onkeypress="" required autofocus>
+														<input type="text" class="form-control" id="estatura" placeholder="Estatura" onkeypress="return autonum(event)" required autofocus>
 														</div>
 														<div class="col-md-1 mb-3">
 														<label for="validationDefault05">Peso</label>
-														<input type="text" class="form-control" id="validationDefault05" placeholder="Peso"  onkeypress=" return autonum(event)" required autofocus>
+														<input type="text" class="form-control" id="peso" placeholder="Peso"  onkeypress=" return autonum(event)" required autofocus>
 														</div>	
 														<div class="col-md-1 mb-3">
 														<label for="validationDefault04">Temperatura</label>
-														<input type="text" class="form-control" id="validationDefault04" placeholder="Temperatura" required autofocus>
+														<input type="text" class="form-control" id="temperatura" placeholder="Temperatura" required autofocus>
 													</div>		
 						                       </div>	
 													
@@ -314,27 +314,34 @@ if(!isset($sessionofuser)){
 							
 							
 								<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-								<form>
+								<form action=""  method="post"  method="POST" id="form_prec">
 								<h2 id="titulo" >Preinscripcion</h2>
-								<div class="froms">
-								<div class="form-group">
+									<div class="froms">
 										<div class="form-group">
-												<label for="TextAreaEnfermedad">Enfermedad/Padeciemintos que presenta</label>
-												<textarea class="form-control" id="TextAreaEnfermedad" rows="2"></textarea>
-										</div>
 											<div class="form-group">
-												<label for="TextAreaReceta">Receta Médica</label>
-												<textarea class="form-control" id="TextAreaReceta" rows="4"></textarea>
+													<label for="TextAreaEnfermedad">Motivo de consulta</label>
+													<textarea class="form-control" id="motivo" rows="2"></textarea>
 											</div>
 											<div class="form-group">
-												<label for="TextAreaIndicaciones">Indicaciones Médicas</label>
-												<textarea class="form-control" id="TextAreaIndicaciones" rows="3"></textarea>
+													<label for="TextAreaEnfermedad">Enfermedad/Padeciemintos que presenta</label>
+													<textarea class="form-control" id="Enfermedad" rows="2"></textarea>
 											</div>
-										</div>
-								</div>
-								<button colspan="1" type="submit"  id="boton2">Guardar receta</button>
+												<div class="form-group">
+													<label for="TextAreaReceta">Receta Médica</label>
+													<textarea class="form-control" id="Receta" rows="4"></textarea>
+												</div>
+												<div class="form-group">
+													<label for="TextAreaIndicaciones">Indicaciones Médicas</label>
+													<textarea class="form-control" id="IndicacionesMedicas" rows="3"></textarea>
+												</div>
+											</div>
+									</div>
+									<button colspan="1" type="button"  id="boton2" onclick="
+										let datos=['entidades/PDFcaso.php','#formdatos_casos','#formdatos_casos'];
+										GenerarPDf(datos);">Guardar receta</button>
+								   </form>
                                 </div>
-                               </form>
+
                           </div>
 						          
                     
@@ -350,7 +357,7 @@ if(!isset($sessionofuser)){
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script src="https://kit.fontawesome.com/7edcc08e48.js" crossorigin="anonymous"></script>
 		<script src="JS/menuslide.js" type="text/javascript"></script>
-		<script src="JS/sinitize.js" type="text/javascript"></script>
+		<script src="JS/PPDfgenerator.js" type="text/javascript"></script>
 		<script src="JS/autocompletar.js" type="text/javascript"></script>
 	     <script>
 		    $( document ).ready(function() {
