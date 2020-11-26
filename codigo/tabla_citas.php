@@ -46,7 +46,7 @@ if(!isset($sessionofuser)){
 			
 			<div class="form-group autocompletar">
 				<label for="exampleInputPassword1">Nombre del Paciente</label>
-				<input type="text" name="nombre" class="form-control" id="nombrepaci" placeholder="Paciente" required autofocus>
+				<input type="text" name="nombre" class="form-control" id="nombrepaci" placeholder="Paciente" autocomplete="off" required autofocus>
 			</div>
 			<div class="form-group">
 
@@ -94,7 +94,7 @@ if(!isset($sessionofuser)){
 			
 			<div class="form-group autocompletar">
 				<label for="exampleInputPassword1">Nombre del Paciente</label>
-				<input type="text" name="nombre" class="form-control" id="nombrepaci" placeholder="Paciente" required autofocus>
+				<input type="text" name="nombre" class="form-control" id="nombrepaci" placeholder="Paciente" autocomplete="off" required autofocus>
 			</div>
 			<div class="form-group">
 

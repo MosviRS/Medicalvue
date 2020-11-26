@@ -27,8 +27,8 @@ function autocompletar(){
             if(arreglo.length == 0) return false;
             arreglo.forEach(item => {
                 var arrayDeCadenas = item.split(",");
-                 console.log(arrayDeCadenas);
-                if(arrayDeCadenas[1].substr(0, tipoMascota.length) == tipoMascota){
+                 console.log(arrayDeCadenas,arrayDeCadenas[1].substr(0, tipoMascota.length));
+                if(arrayDeCadenas[1].substr(0, tipoMascota.length).toLowerCase() == tipoMascota.toLowerCase() || arrayDeCadenas[1].substr(0, tipoMascota.length).toUpperCase()  == tipoMascota.toUpperCase() ){
 
                     const elementoLista = document.createElement('div');
                   

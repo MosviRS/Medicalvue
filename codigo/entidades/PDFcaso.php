@@ -1,14 +1,14 @@
 <?php
 include_once 'medico.php';
-//include_once $_SERVER['DOCUMENT_ROOT'].'/medifast/Medicalvue/codigo/entidades/PDFcaso.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/medifast/Medicalvue/codigo/entidades/PDFcaso.php';
 
-class medicamentos extends medicos{
+class Pdfconsultas extends medicos{
     
 
     public function cargar(){
     session_start();
-    $id=(empty($_POST["idpaci"])) ? NULL : $_POST["idpaci"];
-    $fecha=(empty($_POST["fecha_consulta"])) ? NULL : $_POST["fecha_consulta"];
+    $id=(empty($_POST["idpaciente"])) ? NULL : $_POST["idpaciente"];
+    $fecha=(empty($_POST["fecha"])) ? NULL : $_POST["fecha"];
     $motivo=(empty($_POST["motivo"])) ? NULL : $_POST["motivo"];
     $diagnostico=(empty($_POST["Enfermedad"])) ? NULL : $_POST["Enfermedad"];
     
@@ -21,7 +21,7 @@ class medicamentos extends medicos{
        $this->setUser($_SESSION['name']);
       
        if($id &&  $fecha && $motivo && $diagnostico){
-           $values=$id.",'$fecha','$motivo','$diagnostico'";
+           $values=$id.",'$motivo','$fecha','$diagnostico'";
            $objsql= new metodosSQL();
            $que="INSERT INTO consultas(fk_paciente,motivo,fecha_consulta,diagnostico)  VALUES (".$values.");";
         
@@ -34,8 +34,8 @@ class medicamentos extends medicos{
     }
    
 }
-  $medicamento= new medicamentos();
-  if(!empty($_POST["idpaci"])){
-    $medicamento->cargar();
+  $consulta= new Pdfconsultas();
+  if(!empty($_POST["idpaciente"])){
+    $consulta->cargar();
   }
 ?>

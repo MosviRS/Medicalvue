@@ -11,7 +11,8 @@
                 
                 $res=array();
                 $this->conectar();
-                $que="SELECT id_paciente,nombres,apellidos FROM pacientes WHERE fk_medico=".$_SESSION['id']." AND nombres LIKE ".$texto.";";
+                
+                $que="SELECT id_paciente,nombres,apellidos FROM pacientes WHERE fk_medico=".$_SESSION['id']." AND nombres LIKE LOWER(".$texto.");";
                 $objsql= new metodosSQL();
                 $array=$objsql->vizualizar($this->conectar(),$que);
                 

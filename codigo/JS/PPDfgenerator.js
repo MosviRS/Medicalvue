@@ -1,11 +1,13 @@
 function GenerarPDf(datos){
-    var data=$(datos[1],datos[2]).serialize();
-    alert(data);
+    var data=$(datos[1]).serialize();
+    var data2=$(datos[2]).serialize();
+  
+   
     
-    console.log(data);
+    console.log(data,data2);
      var request = $.ajax({
         type:"POST",
-        data:data,
+        data:data + "&" + data2,
         url:datos[0],
         
      });
@@ -31,3 +33,4 @@ function GenerarPDf(datos){
         // window.locationf="codigo/tabla_pacientes.php";
        }
    });
+  }
