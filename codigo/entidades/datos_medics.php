@@ -12,6 +12,7 @@ $email=(empty($_POST["email"])) ? NULL : $_POST["email"];
 $naci=(empty($_POST["born"])) ? NULL : $_POST["born"];
 $especialidad=(empty($_POST["especiality"])) ? NULL : $_POST["especiality"];
 $telefono=(empty($_POST["Phone"])) ? NULL : $_POST["Phone"];
+$tarifa=(empty($_POST["tarifa"])) ? NULL : $_POST["tarifa"];
 
 session_start();
   require_once 'SQL.php';
@@ -23,20 +24,20 @@ session_start();
  
   if($naci &&  $especialidad && $telefono && $name && $surname && $email){
       echo $this->get_Id();
-      $values=$this->get_Id().",'$naci','$especialidad','$telefono'";
+      $values=$this->get_Id().",'$naci','$especialidad','$telefono','$tarifa'";
       $objsql= new metodosSQL();
      
       $que="SELECT b.fecha_naci,b.especialidad,b.telefono FROM datos_medics b WHERE b.fk_medico=".$this->get_Id().";";
       $array=$objsql->vizualizar($con,$que);
       if(empty($array)){
-         $que="INSERT INTO datos_medics (fk_medico,fecha_naci,especialidad,telefono)  VALUES (".$values.");";
+         $que="INSERT INTO datos_medics (fk_medico,fecha_naci,especialidad,telefono,tarifa_consulta)  VALUES (".$values.");";
          $objsql->insertar($con,$que);
          $que="UPDATE users set nombres=".$name.",apellidos=".$surname.",email=".$email." where id=".$this->get_Id().";";
          $objsql->update($con,$que);
       }else{
          $que="UPDATE users set nombres='".$name."',apellidos='".$surname."',email='".$email."' where id=".$this->get_Id().";";
          $objsql->update($con,$que);
-         $que="UPDATE datos_medics set fecha_naci='".$naci."',especialidad='".$especialidad."',telefono='".$telefono."' where fk_medico=".$this->get_Id().";";
+         $que="UPDATE datos_medics set fecha_naci='".$naci."',especialidad='".$especialidad."',telefono='".$telefono."',tarifa_consulta=".$tarifa." where fk_medico=".$this->get_Id().";";
          $objsql->update($con,$que); 
       }
       
@@ -58,6 +59,7 @@ public function actualizar(){
    $edad=(empty($_POST["edad"])) ? NULL : $_POST["edad"];
    $direccion=(empty($_POST["direc"])) ? NULL : $_POST["direc"];
    $sexo=(empty($_POST["sexo"])) ? NULL : $_POST["sexo"];
+  
       require_once 'SQL.php';
       require_once '../conn.php';
       $conn = new conn();

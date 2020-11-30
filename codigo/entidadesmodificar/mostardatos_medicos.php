@@ -12,7 +12,7 @@
 
         $que="SELECT id,nombres,apellidos FROM users  WHERE id=".$id.";";
         $array1=$objsql->vizualizar($con,$que);
-        $que="SELECT b.fecha_naci,b.especialidad,b.telefono FROM datos_medics b WHERE b.fk_medico=".$id.";";
+        $que="SELECT b.fecha_naci,b.especialidad,b.telefono,b.tarifa_consulta FROM datos_medics b WHERE b.fk_medico=".$id.";";
         $array2=$objsql->vizualizar($con,$que);
         $que="SELECT email FROM users  WHERE id=".$id.";";
         $array3=$objsql->vizualizar($con,$que);

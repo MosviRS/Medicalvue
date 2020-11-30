@@ -298,7 +298,19 @@ if(!isset($sessionofuser)){
                                     
                                     <input type="text" name="Phone" required autofocus>
                                 </div>
-                                <div class="f1">
+                                
+								<div class="f1">
+                                    <div class="f2">
+                                        <label for="Phone">Tarifa de Consulta</label>
+                                    </div>
+                                    
+                                    <input type="text" name="tarifa" required autofocus>
+									<small id="TarifaHelp" class="form-text text-muted">Introduce tu precio por consulta que das los pacientes.</small>
+                                   </div>
+                               
+                                    </div>
+
+								<div class="f1">
                                     <div class="f2">
 										<label for="email">Correo electronico</label>
 										
@@ -307,8 +319,6 @@ if(!isset($sessionofuser)){
 									<input type="email" name="email" aria-describedby="emailHelp" required>
 									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
-                               
-                                    </div>
                         
                             <button colspan="1" type="submit"  id="boton1">Guardar</button>
                               

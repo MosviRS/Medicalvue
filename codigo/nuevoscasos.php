@@ -266,7 +266,10 @@ if(!isset($sessionofuser)){
 											</li>
 											<li class="nav-item">
 												<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Preinscripcion</a>
-											</li>		
+											</li>	
+											<li class="nav-item">
+												<a class="nav-link" id="report-tab" data-toggle="tab" href="#report" role="tab" aria-controls="report" aria-selected="false">Reporte</a>
+											</li>	
 							</ul>
                        
 						  <div class="tab-content" id="myTabContent">
@@ -344,6 +347,30 @@ if(!isset($sessionofuser)){
 								   </form>
                                 </div>
 
+								<div class="tab-pane fade" id="report" role="tabpanel" aria-labelledby="report-tab">
+								<form action=""  method="POST" id="form_report">
+								<h2 id="titulo" >Reportes</h2>
+									<div class="froms">
+									<div class="form-group">
+													<label for="TextAreaEnfermedad"><strong>Selecciona el rango de fechas para generar el reporte de consultas</strong></label>
+										
+									</div>
+										<div class="form-row">
+										               
+														<div class="col-md-4 mb-3">
+														<label for="validationDefault01">Fecha Inicial</label>
+														<input type="date" name="fecha" class="form-control" id="fecha_inicial" placeholder="fecha_consulta" required autofocus>
+														</div>
+														<div class="col-md-4 mb-3">
+															<label for="born">Fecha Final</label>
+																<input type="date" name="fecha" class="form-control" id="fecha_final" placeholder="fecha_consulta" required autofocus>
+														</div>
+										</div>
+									</div>
+									<button colspan="1" type="button"  id="boton1" onclick="">Generar Reporte</button>
+								   </form>
+                                </div>
+
                           </div>
 						          
                     
@@ -372,6 +399,8 @@ if(!isset($sessionofuser)){
 
 			var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 			$("#fecha_consulta").val(today);
+			$("#fecha_inicial").val(today);
+			$("#fecha_final").val(today);
 			});
 		</script>
 	</body>
