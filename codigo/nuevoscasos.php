@@ -348,7 +348,7 @@ if(!isset($sessionofuser)){
                                 </div>
 
 								<div class="tab-pane fade" id="report" role="tabpanel" aria-labelledby="report-tab">
-								<form action=""  method="POST" id="form_report">
+								<form action="entidades/FPDFreport.php"  method="POST" id="form_report">
 								<h2 id="titulo" >Reportes</h2>
 									<div class="froms">
 									<div class="form-group">
@@ -359,15 +359,15 @@ if(!isset($sessionofuser)){
 										               
 														<div class="col-md-4 mb-3">
 														<label for="validationDefault01">Fecha Inicial</label>
-														<input type="date" name="fecha" class="form-control" id="fecha_inicial" placeholder="fecha_consulta" required autofocus>
+														<input type="date" name="fecha_inicial" class="form-control" id="fecha_inicial" placeholder="fecha_consulta" required autofocus>
 														</div>
 														<div class="col-md-4 mb-3">
 															<label for="born">Fecha Final</label>
-																<input type="date" name="fecha" class="form-control" id="fecha_final" placeholder="fecha_consulta" required autofocus>
+																<input type="date" name="fecha_final" class="form-control" id="fecha_final" placeholder="fecha_consulta" required autofocus>
 														</div>
 										</div>
 									</div>
-									<button colspan="1" type="button"  id="boton1" onclick="">Generar Reporte</button>
+									<button colspan="1" type="submit"  id="boton1">Generar Reporte</button>
 								   </form>
                                 </div>
 

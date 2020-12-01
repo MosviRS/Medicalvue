@@ -28,6 +28,6 @@ $("#show-sidebar").click(function() {
 });
 
 $('#boton1').on('click', function (e) {
-  $('#myTab li:last-child a').tab('show') 
+  $('#myTab li:nth-child(2) a').tab('show') 
   
-})
+});
